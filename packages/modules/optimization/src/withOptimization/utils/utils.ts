@@ -2,7 +2,6 @@ import {
   getExcludePackagesRegexp,
   getIncludePackagesRegexp,
 } from '@webpackon/core';
-import webpack from 'webpack';
 
 type ChunkGroups = Array<{
   chunkName: string;

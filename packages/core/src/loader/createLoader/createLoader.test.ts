@@ -1,5 +1,4 @@
-import { DEVELOPMENT_MODE } from '../../mode';
-import { Config } from '../../mode/mode';
+import { DEVELOPMENT_MODE, Mode } from '../../mode';
 
 import { createLoader } from './createLoader';
 
@@ -11,7 +10,7 @@ describe('createLoader', () => {
       use: [],
     };
 
-    expect(testLoader({ mode: DEVELOPMENT_MODE })).toEqual(expectLoader);
+    expect(testLoader({})).toEqual(expectLoader);
   });
 
   it('by default adds parameters (test, exclude) to the loader if there are any', () => {
@@ -24,9 +23,7 @@ describe('createLoader', () => {
       exclude,
     };
 
-    expect(
-      testLoader({ test: testRegExp, mode: DEVELOPMENT_MODE, exclude })
-    ).toEqual(expectLoader);
+    expect(testLoader({ test: testRegExp, exclude })).toEqual(expectLoader);
   });
 
   it('createLoader passes all received parameters to loaderCreator', () => {

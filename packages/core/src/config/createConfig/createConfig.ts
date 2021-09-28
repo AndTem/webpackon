@@ -1,5 +1,6 @@
 import { Mode } from '../../mode';
 import { Config } from '../types';
+
 import { CreateConfigParams, Context } from './types';
 
 const mockModifyConfig = (config) => config;

@@ -14,6 +14,24 @@
   "rules": {
     "prettier/prettier": ["error", { "singleQuote": true }],
     "import/prefer-default-export": "off",
-    "quotes": ["error", "single"]
+    "quotes": ["error", "single"],
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "pathGroupsExcludedImportTypes": [
+          "internal"
+        ],
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "object",
+          "index"
+        ]
+      }
+    ]
   }
 }

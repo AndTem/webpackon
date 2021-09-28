@@ -9,12 +9,12 @@
     "tsc": "../../node_modules/.bin/tsc",
     "remove-build": "../../node_modules/.bin/rimraf lib/*",
     "babel-transform": "../../node_modules/.bin/babel lib --out-dir lib",
-    "build": "npm run remove-build && npm run tsc && npm run babel-transform",
-    "lint": "eslint --fix .",
+    "build": "yarn run remove-build && yarn run tsc && yarn run babel-transform",
+    "lint:fix": "eslint ./src --fix --ext .ts",
     "lint:types": "tsc --noEmit",
     "tests": "jest",
-    "linting": "npm run lint && npm run lint:types && npm run tests",
-    "release": "npm run linting && npm run build && npm publish"
+    "linting": "yarn run lint:fix && yarn run lint:types && yarn run tests",
+    "release": "yarn run linting && yarn run build && npm publish"
   },
   "dependencies": {}
 }

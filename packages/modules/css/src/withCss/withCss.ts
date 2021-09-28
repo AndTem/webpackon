@@ -1,3 +1,5 @@
+import path from 'path';
+
 import {
   createConfigDecorator,
   addLoaders,
@@ -9,7 +11,6 @@ import {
 } from '@webpackon/core';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
-import path from 'path';
 
 import { createCssLoader, CssLoaderOptions } from '../cssLoader';
 import { createPostCssLoader, PostCssLoaderOptions } from '../postCssLoader';

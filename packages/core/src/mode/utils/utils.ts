@@ -1,5 +1,4 @@
 import { DEVELOPMENT_MODE, PRODUCTION_MODE } from '../constants';
-
 import { Mode } from '../types';
 
 type CheckModeFunc = (mode: Mode) => boolean;
