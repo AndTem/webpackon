@@ -1,33 +1,19 @@
-import {
-  ModifyConfigFunc,
-  compose,
-  createConfigDecorator,
-  Mode,
-} from '@webpackon/core';
-import { withBabel } from '@webpackon/babel';
-import { withTs } from '@webpackon/typescript';
+import { ModifyConfigFunc, compose } from '@webpackon/core';
 import { withOptimization } from '@webpackon/optimization';
+
 import { AdditionalEntryParams } from '../entry';
-
-const getScriptsLoader = (
-  { useTs }: AdditionalEntryParams,
-  mode: Mode
-): ReturnType<typeof createConfigDecorator> => {
-  if (useTs) {
-    return withTs();
-  }
-
-  return withBabel();
-};
+import { withReactRefresh } from '../withReactRefresh';
 
 export const modify: ModifyConfigFunc<AdditionalEntryParams> = (
   config,
   context
 ) => {
-  const { mode, production = {} } = context;
+  const { mode, production = {}, useTs, transpileModules } = context;
   const { splitChunkCacheGroups } = production;
 
   const modifyConfig = compose(
+    // includes withBabel and withTs
+    withReactRefresh({ mode, useTs, transpileModules }),
     withOptimization({
       mode,
       splitChunkCacheGroups: [

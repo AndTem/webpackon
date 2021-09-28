@@ -3,7 +3,7 @@ import { AdditionalEntryParams as BaseConfigAdditionalEntryParams } from '@webpa
 
 export type AdditionalEntryParams = Omit<
   BaseConfigAdditionalEntryParams,
-  'disableDefaultBabelLoader'
+  'disableDefaultBabelLoader' | 'enableHotModuleReplacement'
 > & { useTs?: boolean };
 
 export type EntryParams = CreateConfigParams<AdditionalEntryParams>;

@@ -14,6 +14,7 @@ export type AdditionalEntryParams = {
     useLocalIp?: boolean;
     autoOpen?: boolean;
     proxy?: Record<string, unknown>;
+    enableHotModuleReplacement?: boolean;
   };
   production?: {
     dropConsole?: boolean;

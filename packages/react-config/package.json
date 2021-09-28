@@ -41,7 +41,10 @@
     "@webpackon/typescript": "^1.0.0",
     "@webpackon/base-config": "^1.0.0",
     "@webpackon/optimization": "^1.0.0",
-    "@types/webpack": "5.28.0"
+    "@types/webpack": "5.28.0",
+    "react-refresh": "0.10.0",
+    "@pmmmwh/react-refresh-webpack-plugin": "0.5.1",
+    "react-refresh-typescript": "2.0.2"
   },
   "peerDependencies": {
     "webpack": "5.x.x",

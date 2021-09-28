@@ -37,7 +37,7 @@ export const modify: ModifyConfigFunc<AdditionalEntryParams> = (_, context) => {
     dev = {},
     production = {},
   } = context;
-  const { useLocalIp, autoOpen, proxy } = dev;
+  const { useLocalIp, autoOpen, proxy, enableHotModuleReplacement } = dev;
   const { dropConsole, splitChunkCacheGroups } = production;
 
   const baseConfig = {
@@ -55,6 +55,7 @@ export const modify: ModifyConfigFunc<AdditionalEntryParams> = (_, context) => {
       mode,
       useLocalIp,
       proxy,
+      enableHotModuleReplacement,
       open: autoOpen,
       outputPath: typeof output === 'string' ? output : output.path,
     }),

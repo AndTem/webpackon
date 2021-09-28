@@ -6,6 +6,7 @@ export {
   CreateConfigParams,
   Context,
   ModifyConfigFunc,
+  Config,
 } from './config';
 export { Mode, isProduction, isDevelopment } from './mode';
 export {

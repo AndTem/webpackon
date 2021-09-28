@@ -2,7 +2,7 @@ import { createConfigDecorator, addLoaders } from '@webpackon/core';
 
 import { createBabelLoader, BabelLoaderOptions } from '../babelLoader';
 
-type WithBabelParams = Pick<BabelLoaderOptions, 'transpileModules'> & {
+export type WithBabelParams = Pick<BabelLoaderOptions, 'transpileModules'> & {
   loaderParams?: BabelLoaderOptions;
 };
 
