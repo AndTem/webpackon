@@ -1,25 +1,22 @@
 {
   "name": "webpackon",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": true,
-  "description": "Webpack 5 config",
+  "description": "Webpackon",
   "workspaces": [
     "packages/*",
     "packages/modules/*"
   ],
   "scripts": {
-    "tsc": "../node_modules/.bin/tsc",
-    "remove-build": "../node_modules/.bin/rimraf lib/*",
-    "babel-transform": "../node_modules/.bin/babel lib --out-dir lib",
-    "build": "yarn run remove-build && yarn run tsc && yarn run babel-transform",
-    "linting": "yarn run lint:fix && yarn run lint:types && yarn run tests",
-    "release": "yarn run linting && yarn run build && npm publish",
     "lint:fix": "yarn workspaces run lint:fix",
     "lint": "eslint --fix --quiet",
     "lint:types": "tsc --noEmit",
     "tests": "jest"
   },
   "devDependencies": {
+    "@webpackon/repository-commander": "^1.0.0",
+    "rimraf": "^3.0.2",
+    "copyfiles": "^2.4.1",
     "@types/jest": "^26.0.24",
     "@typescript-eslint/eslint-plugin": "^4.28.5",
     "@typescript-eslint/parser": "^4.28.5",

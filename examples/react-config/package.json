@@ -1,0 +1,12 @@
+{
+  "name": "@webpackon/react-config-example",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+  },
+  "dependencies": {
+    "@webpackon/react-config": "^0.1.0",
+    "webpack": "^5.58.2",
+    "webpack-dev-server": "^4.3.1"
+  }
+}

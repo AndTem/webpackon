@@ -1,2 +1,2 @@
 export * from './fontsLoader';
-export * from './withFonts';
+export * from './useFonts';

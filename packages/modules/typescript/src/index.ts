@@ -1,2 +1,2 @@
 export * from './tsLoader';
-export * from './withTs';
+export * from './useTs';

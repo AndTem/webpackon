@@ -1,2 +1,2 @@
 export * from './babelLoader';
-export * from './withBabel';
+export * from './useBabel';

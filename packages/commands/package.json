@@ -1,0 +1,15 @@
+{
+  "name": "@webpackon/repository-commander",
+  "version": "1.0.0",
+  "private": true,
+  "bin": {
+    "rep-commander": "./index.js"
+  },
+  "scripts": {},
+  "dependencies": {
+    "recursive-copy": "^2.0.10",
+    "shelljs": "^0.8.4"
+  },
+  "devDependencies": {},
+  "peerDependencies": {}
+}

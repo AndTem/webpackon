@@ -1,34 +1,17 @@
 {
   "name": "@webpackon/react-config",
-  "version": "1.2.4",
-  "description": "Webpack 4 config for SPA",
-  "author": "And_tem",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AndTem/webpack-spa-config"
-  },
-  "license": "MIT",
-  "homepage": "https://github.com/AndTem/webpack-spa-config#Readme",
-  "keywords": [
-    "webpack",
-    "webpack 5",
-    "webpack config",
-    "webpack-config",
-    "webpack spa",
-    "webpack compatibility config",
-    "webpack modern config"
-  ],
-  "bugs": {
-    "url": "https://github.com/AndTem/webpack-spa-config/issues"
-  },
-  "main": "lib/index.js",
-  "files": [
-    "lib/**/*"
-  ],
+  "version": "0.1.0",
+  "description": "Webpackon react config",
+  "homepage": "https://github.com/AndTem/webpackon/tree/master/packages/react-config#Readme",
+  "browser": "src/index.ts",
+  "types": "src/index.ts",
   "scripts": {
-    "tsc": "../../node_modules/.bin/tsc",
-    "remove-build": "../../node_modules/.bin/rimraf lib/*",
-    "build": "yarn run remove-build && yarn run tsc",
+    "remove-build": "rimraf lib/*",
+    "prebuild": "yarn run remove-build",
+    "build": "yarn run tsc -p ./tsconfig.json",
+    "postbuild": "yarn run copy-files && yarn run modify-package",
+    "copy-files": "rep-commander copyCommonFiles",
+    "modify-package": "rep-commander modifyPackageJSON",
     "lint:fix": "eslint ./src --fix --ext .ts",
     "lint:types": "tsc --noEmit",
     "tests": "jest",
@@ -36,11 +19,11 @@
     "release": "yarn run linting && yarn run build && npm publish"
   },
   "dependencies": {
-    "@webpackon/core": "^1.0.0",
-    "@webpackon/babel": "^1.0.0",
-    "@webpackon/typescript": "^1.0.0",
-    "@webpackon/base-config": "^1.0.0",
-    "@webpackon/optimization": "^1.0.0",
+    "@webpackon/core": "^0.1.0",
+    "@webpackon/use-babel": "^0.1.0",
+    "@webpackon/use-typescript": "^0.1.0",
+    "@webpackon/base-config": "^0.1.0",
+    "@webpackon/use-optimization": "^0.1.0",
     "@types/webpack": "5.28.0",
     "react-refresh": "0.10.0",
     "@pmmmwh/react-refresh-webpack-plugin": "0.5.1",
@@ -48,6 +31,6 @@
   },
   "peerDependencies": {
     "webpack": "5.x.x",
-    "webpack-dev-server": "3.x.x"
+    "webpack-dev-server": "4.x.x"
   }
 }

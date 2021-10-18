@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es2019",
     "lib": ["ESNext"],
     "module": "commonjs",
-    "outDir": "lib",
     "baseUrl": ".",
     "esModuleInterop": true,
     "declaration": true
-  }
+  },
+
+  "exclude": ["**/lib"]
 }

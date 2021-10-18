@@ -1,2 +1,2 @@
 export * from './imagesLoader';
-export * from './withImages';
+export * from './useImages';

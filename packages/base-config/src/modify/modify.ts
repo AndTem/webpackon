@@ -1,13 +1,13 @@
 import path from 'path';
 
 import { ModifyConfigFunc, isProduction, Mode, compose } from '@webpackon/core';
-import { withBabel } from '@webpackon/babel';
-import { withCss } from '@webpackon/css';
-import { withImages } from '@webpackon/images';
-import { withFonts } from '@webpackon/fonts';
-import { withHtmlTemplate } from '@webpackon/html';
-import { withDevServer } from '@webpackon/dev-server';
-import { withOptimization } from '@webpackon/optimization';
+import { useBabel } from '@webpackon/use-babel';
+import { useCss } from '@webpackon/use-css';
+import { useImages } from '@webpackon/use-images';
+import { useFonts } from '@webpackon/use-fonts';
+import { useHtmlTemplate } from '@webpackon/use-html';
+import { useDevServer } from '@webpackon/use-dev-server';
+import { useOptimization } from '@webpackon/use-optimization';
 
 import { AdditionalEntryParams } from '../entry';
 
@@ -51,7 +51,7 @@ export const modify: ModifyConfigFunc<AdditionalEntryParams> = (_, context) => {
   };
 
   const configModifiers = [
-    withDevServer({
+    useDevServer({
       mode,
       useLocalIp,
       proxy,
@@ -59,15 +59,15 @@ export const modify: ModifyConfigFunc<AdditionalEntryParams> = (_, context) => {
       open: autoOpen,
       outputPath: typeof output === 'string' ? output : output.path,
     }),
-    withFonts(),
-    withImages({ mode }),
-    withCss({ mode }),
-    withHtmlTemplate({ mode, title: htmlTitle, templatePath }),
-    withOptimization({ mode, dropConsole, splitChunkCacheGroups }),
+    useFonts(),
+    useImages({ mode }),
+    useCss({ mode }),
+    useHtmlTemplate({ mode, title: htmlTitle, templatePath }),
+    useOptimization({ mode, dropConsole, splitChunkCacheGroups }),
   ];
 
   if (!disableDefaultBabelLoader) {
-    configModifiers.push(withBabel({ transpileModules }));
+    configModifiers.push(useBabel({ transpileModules }));
   }
 
   return compose(...configModifiers)(baseConfig);

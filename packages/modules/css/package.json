@@ -1,15 +1,17 @@
 {
-  "name": "@webpackon/css",
-  "version": "1.0.0",
-  "description": "Webpack 4 config for SPA",
-  "author": "And_tem",
+  "name": "@webpackon/use-css",
+  "version": "0.1.0",
+  "description": "Webpackon use css",
+  "homepage": "https://github.com/AndTem/webpackon/tree/master/packages/modules/css#Readme",
   "browser": "src/index.ts",
   "types": "src/index.ts",
   "scripts": {
-    "tsc": "../../node_modules/.bin/tsc",
-    "remove-build": "../../node_modules/.bin/rimraf lib/*",
-    "babel-transform": "../../node_modules/.bin/babel lib --out-dir lib",
-    "build": "yarn run remove-build && yarn run tsc && yarn run babel-transform",
+    "remove-build": "rimraf lib/*",
+    "prebuild": "yarn run remove-build",
+    "build": "yarn run tsc -p ./tsconfig.json",
+    "postbuild": "yarn run copy-files && yarn run modify-package",
+    "copy-files": "rep-commander copyCommonFiles",
+    "modify-package": "rep-commander modifyPackageJSON",
     "lint:fix": "eslint ./src --fix --ext .ts",
     "lint:types": "tsc --noEmit",
     "tests": "jest",
@@ -23,6 +25,6 @@
     "autoprefixer": "^10.3.1",
     "mini-css-extract-plugin": "^2.2.0",
     "optimize-css-assets-webpack-plugin": "^6.0.1",
-    "@webpackon/core": "^1.0.0"
+    "@webpackon/core": "^0.1.0"
   }
 }

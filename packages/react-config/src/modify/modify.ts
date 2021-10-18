@@ -1,8 +1,8 @@
 import { ModifyConfigFunc, compose } from '@webpackon/core';
-import { withOptimization } from '@webpackon/optimization';
+import { useOptimization } from '@webpackon/use-optimization';
 
 import { AdditionalEntryParams } from '../entry';
-import { withReactRefresh } from '../withReactRefresh';
+import { useReactRefresh } from '../useReactRefresh';
 
 export const modify: ModifyConfigFunc<AdditionalEntryParams> = (
   config,
@@ -12,9 +12,9 @@ export const modify: ModifyConfigFunc<AdditionalEntryParams> = (
   const { splitChunkCacheGroups } = production;
 
   const modifyConfig = compose(
-    // includes withBabel and withTs
-    withReactRefresh({ mode, useTs, transpileModules }),
-    withOptimization({
+    // includes useBabel and useTs
+    useReactRefresh({ mode, useTs, transpileModules }),
+    useOptimization({
       mode,
       splitChunkCacheGroups: [
         ...splitChunkCacheGroups,
