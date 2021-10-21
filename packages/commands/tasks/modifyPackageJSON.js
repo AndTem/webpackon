@@ -32,8 +32,8 @@ const modifyPackageJSON = () => {
           'webpackon',
           ...keywords,
         ],
-        main: './src/index.js',
-        types: './src/index.d.ts',
+        main: './index.js',
+        types: './index.d.ts',
       },
       null,
       2

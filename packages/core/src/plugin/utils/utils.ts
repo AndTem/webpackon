@@ -15,7 +15,10 @@ export const removePlugin = (
 
 export const addPlugins =
   (plugins: Plugin[]) =>
-  (config: Config): Config => ({
+  ({
+    plugins: configPlugins = [],
+    ...config
+  }: Partial<Config>): Partial<Config> => ({
     ...config,
-    plugins: [...config.plugins, ...plugins],
+    plugins: [...configPlugins, ...plugins],
   });

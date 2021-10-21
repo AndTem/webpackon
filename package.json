@@ -11,8 +11,9 @@
   "scripts": {
     "lint:fix": "yarn workspaces run lint:fix",
     "lint": "eslint --fix --quiet",
-    "lint:types": "tsc --noEmit",
-    "tests": "jest"
+    "lint:types": "yarn workspaces run lint:types",
+    "tests": "jest",
+    "build:all": "yarn workspaces run build"
   },
   "devDependencies": {
     "@webpackon/repository-commander": "^1.0.0",
@@ -34,6 +35,6 @@
     "simple-git-hooks": "^2.6.1",
     "lint-staged": "^11.1.2",
     "ts-jest": "^27.0.4",
-    "typescript": "^4.3.5"
+    "typescript": "^4.4.4"
   }
 }

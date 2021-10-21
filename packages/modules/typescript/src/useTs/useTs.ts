@@ -19,18 +19,18 @@ export const useTs = createConfigDecorator<UseTsParams, false>(
       createTsLoader({ transpileModules, enableTypeCheck, ...loaderParams }),
     ]);
 
+    const { extensions: configExtensions = [], plugins: configPlugins = [] } =
+      config.resolve;
+
     const extensions = Array.from(
-      new Set([...config.resolve.extensions, ...TS_EXTENSIONS])
+      new Set([...configExtensions, ...TS_EXTENSIONS])
     );
 
     return modify({
       ...config,
       resolve: {
         ...config.resolve,
-        plugins: [
-          ...config.resolve.plugins,
-          new TsconfigPathsPlugin({ extensions }),
-        ],
+        plugins: [...configPlugins, new TsconfigPathsPlugin({ extensions })],
         extensions,
       },
     });

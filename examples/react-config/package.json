@@ -3,18 +3,30 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "webpack --mode=production --config webpack.config.js",
-    "dev": "webpack-dev-server --mode=development --config webpack.config.js"
+    "build": "yarn -v",
+    "build:prod": "webpack --mode=production --config webpack.config.js",
+    "dev": "webpack-dev-server --mode=development --config webpack.config.js",
+    "lint:types": "yarn -v"
   },
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "@types/react": "^17.0.30",
     "@types/react-dom": "^17.0.9",
-    "@webpackon/react-config": "^0.1.0",
     "webpack": "^5.58.2",
     "webpack-dev-server": "^4.3.1",
-    "webpack-cli": "^4.9.1"
+    "webpack-cli": "^4.9.1",
+    "@webpackon/react-config": "file:../../packages/react-config/lib",
+    "@webpackon/base-config": "file:../../packages/base-config/lib",
+    "@webpackon/core": "file:../../packages/core/lib",
+    "@webpackon/use-babel": "file:../../packages/modules/babel/lib",
+    "@webpackon/use-typescript": "file:../../packages/modules/typescript/lib",
+    "@webpackon/use-html": "file:../../packages/modules/html/lib",
+    "@webpackon/use-optimization": "file:../../packages/modules/optimization/lib",
+    "@webpackon/use-css": "file:../../packages/modules/css/lib",
+    "@webpackon/use-fonts": "file:../../packages/modules/fonts/lib",
+    "@webpackon/use-images": "file:../../packages/modules/images/lib",
+    "@webpackon/use-dev-server": "file:../../packages/modules/dev-server/lib"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",

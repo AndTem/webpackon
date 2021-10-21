@@ -9,7 +9,7 @@ export const modify: ModifyConfigFunc<AdditionalEntryParams> = (
   context
 ) => {
   const { mode, production = {}, useTs, transpileModules } = context;
-  const { splitChunkCacheGroups } = production;
+  const { splitChunkCacheGroups = [] } = production;
 
   const modifyConfig = compose(
     // includes useBabel and useTs

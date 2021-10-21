@@ -13,7 +13,7 @@ export type CreateConfigParams<AdditionalParams extends Record<string, any>> =
 
 export type Context<AdditionalParams extends Record<string, any>> = Omit<
   CreateConfigParams<AdditionalParams>,
-  'modifyAll' | 'modifyDev' | 'modifyProd'
+  'modify'
 > & {
   mode: Mode;
 } & AdditionalParams;

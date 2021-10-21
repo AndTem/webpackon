@@ -5,7 +5,10 @@
   "bin": {
     "rep-commander": "./index.js"
   },
-  "scripts": {},
+  "scripts": {
+    "build": "yarn -v",
+    "lint:types": "yarn -v"
+  },
   "dependencies": {
     "recursive-copy": "^2.0.10",
     "shelljs": "^0.8.4"

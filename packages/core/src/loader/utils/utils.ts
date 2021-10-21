@@ -3,9 +3,9 @@ import { Config } from '../../config';
 
 export const addLoaders =
   (loaders: Loader[]) =>
-  (config: Config): Config => ({
+  (config: Partial<Config>): Partial<Config> => ({
     ...config,
     module: {
-      rules: [...config.module.rules, ...loaders],
+      rules: [...(config.module?.rules || []), ...loaders],
     },
   });

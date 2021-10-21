@@ -8,5 +8,5 @@ type UseFontsParams = {
 
 export const useFonts = createConfigDecorator<UseFontsParams, false>(
   (config, { loaderParams } = {}) =>
-    addLoaders([createFontsLoader(loaderParams)])(config)
+    addLoaders([createFontsLoader(loaderParams || {})])(config)
 );

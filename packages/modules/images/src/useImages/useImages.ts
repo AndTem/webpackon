@@ -22,7 +22,7 @@ const DEFAULT_IMAGEMIN_PLUGINS: UseImagesParams['imageminPlugins'] = [
 ];
 
 export const useImages = createConfigDecorator<UseImagesParams, true>(
-  (config, { loaderParams, imageminPlugins, mode }) => {
+  (config, { loaderParams = {}, imageminPlugins, mode }) => {
     const prodPlugins = [
       new ImageMinimizerPlugin({
         minimizerOptions: {
