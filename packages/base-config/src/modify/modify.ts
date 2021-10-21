@@ -28,7 +28,7 @@ export const modify: ModifyConfigFunc<AdditionalEntryParams> = (_, context) => {
   const {
     entry,
     output,
-    resolve,
+    resolve = DEFAULT_RESOLVE,
     mode,
     transpileModules,
     htmlTitle,
@@ -40,14 +40,16 @@ export const modify: ModifyConfigFunc<AdditionalEntryParams> = (_, context) => {
   const { useLocalIp, autoOpen, proxy, enableHotModuleReplacement } = dev;
   const { dropConsole, splitChunkCacheGroups } = production;
 
+  const currentOutput = output || getDefaultOutput(mode);
+
   const baseConfig = {
     target: 'web',
 
     entry,
 
-    output: output || getDefaultOutput(mode),
+    output: currentOutput,
 
-    resolve: resolve || DEFAULT_RESOLVE,
+    resolve,
   };
 
   const configModifiers = [
@@ -57,7 +59,8 @@ export const modify: ModifyConfigFunc<AdditionalEntryParams> = (_, context) => {
       proxy,
       enableHotModuleReplacement,
       open: autoOpen,
-      outputPath: typeof output === 'string' ? output : output.path,
+      outputPath:
+        typeof currentOutput === 'string' ? currentOutput : currentOutput.path,
     }),
     useFonts(),
     useImages({ mode }),
