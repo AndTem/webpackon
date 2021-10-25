@@ -29,7 +29,10 @@ export const createPostCssLoader = createLoader<PostCssLoaderOptions>(
         {
           loader: 'postcss-loader',
           options: {
-            plugins: resultPlugins,
+            postcssOptions: {
+              plugins: resultPlugins,
+              ...options?.postcssOptions,
+            },
             ...options,
           },
         },
