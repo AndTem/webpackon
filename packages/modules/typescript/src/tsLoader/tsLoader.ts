@@ -20,6 +20,9 @@ export const createTsLoader = createLoader<TsLoaderAddParams>(
       : /node_modules/,
     use: [
       {
+        loader: 'babel-loader',
+      },
+      {
         loader: 'ts-loader',
         options: {
           transpileOnly: enableTypeCheck,
