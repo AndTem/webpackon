@@ -19,7 +19,6 @@ export const createTsLoader = createLoader<TsLoaderAddParams>(
       ? getExcludePackagesRegexp(transpileModules)
       : /node_modules/,
     use: [
-      'thread-loader',
       {
         loader: 'ts-loader',
         options: {

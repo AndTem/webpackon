@@ -18,7 +18,6 @@ export const createBabelLoader = createLoader<BabelLoaderAddParams>(
       ? getExcludePackagesRegexp(transpileModules)
       : /node_modules/,
     use: [
-      'thread-loader',
       {
         loader: 'babel-loader',
         options,

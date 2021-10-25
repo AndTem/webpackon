@@ -4,7 +4,8 @@
   "description": "Webpackon use typescript",
   "homepage": "https://github.com/AndTem/webpackon/tree/master/packages/modules/typescript#Readme",
   "browser": "src/index.ts",
-  "types": "src/index.ts",
+   "types": "src/index.ts",
+   "main": "lib/index.js",
   "scripts": {
     "remove-build": "rimraf lib/*",
     "prebuild": "yarn run remove-build",
@@ -20,7 +21,6 @@
   },
   "dependencies": {
     "ts-loader": "^9.2.5",
-    "thread-loader": "^3.0.4",
     "@webpackon/core": "^0.1.0",
     "tsconfig-paths-webpack-plugin": "3.5.1"
   }
