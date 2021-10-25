@@ -43,17 +43,18 @@ export const useDevServer = createConfigDecorator<UseDevServerParams, true>(
       ...config,
       devtool: 'eval-source-map',
       devServer: {
-        contentBase: outputPath,
+        static: outputPath,
         host: useLocalIp ? 'local-ip' : undefined,
         hot: true,
         historyApiFallback: true,
+        client: {
+          progress: true,
+        },
+        devMiddleware: {
+          index: true,
+        },
         open,
         proxy,
-      },
-      cache: {
-        type: 'filesystem',
-        cacheLocation: path.join(outputPath, '.cache'),
-        compression: 'brotli',
       },
     });
   }
