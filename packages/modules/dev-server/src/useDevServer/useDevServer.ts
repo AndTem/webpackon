@@ -49,12 +49,18 @@ export const useDevServer = createConfigDecorator<UseDevServerParams, true>(
         historyApiFallback: true,
         client: {
           progress: true,
+          overlay: true,
         },
         devMiddleware: {
           index: true,
         },
         open,
         proxy,
+      },
+      cache: {
+        type: 'filesystem',
+        cacheLocation: path.join(outputPath, '.cache'),
+        compression: 'brotli',
       },
     });
   }
