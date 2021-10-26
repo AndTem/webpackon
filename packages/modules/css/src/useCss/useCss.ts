@@ -17,6 +17,7 @@ import { createPostCssLoader, PostCssLoaderOptions } from '../postCssLoader';
 
 type UseCssParams = {
   mode: Mode;
+  enableCssModules?: boolean;
   cssLoaderParams?: Partial<CssLoaderOptions>;
   postCssPlugins?: PostCssLoaderOptions['plugins'];
   postCssLoaderOptions?: Partial<PostCssLoaderOptions>;
@@ -31,10 +32,19 @@ const getMiniCssExtractPlugin = (mode: Mode): Plugin =>
   });
 
 export const useCss = createConfigDecorator<UseCssParams, true>(
-  (config, { cssLoaderParams, mode, postCssPlugins, postCssLoaderOptions }) => {
+  (
+    config,
+    {
+      cssLoaderParams,
+      mode,
+      postCssPlugins,
+      postCssLoaderOptions,
+      enableCssModules,
+    }
+  ) => {
     const modifyConfig = compose(
       addLoaders([
-        createCssLoader({ mode, ...cssLoaderParams }),
+        createCssLoader({ mode, enableCssModules, ...cssLoaderParams }),
         createPostCssLoader({
           mode,
           plugins: postCssPlugins,
