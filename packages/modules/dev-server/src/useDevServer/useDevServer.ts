@@ -48,7 +48,6 @@ export const useDevServer = createConfigDecorator<UseDevServerParams, true>(
         hot: true,
         historyApiFallback: true,
         client: {
-          progress: true,
           overlay: true,
         },
         devMiddleware: {

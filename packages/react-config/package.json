@@ -22,7 +22,7 @@
   "dependencies": {
     "@webpackon/core": "^0.1.0",
     "@webpackon/use-babel": "^0.1.0",
-    "@webpackon/use-typescript": "^0.1.0",
+    "@webpackon/use-typescript-babel": "^0.1.0",
     "@webpackon/base-config": "^0.1.0",
     "@webpackon/use-optimization": "^0.1.0",
     "@types/webpack": "5.28.0",

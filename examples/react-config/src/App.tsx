@@ -4,7 +4,7 @@ import reactLogoSrc from 'images/react-logo.svg';
 const App = () => (
   <main>
     <img src={reactLogoSrc} alt="react logo" />
-    <h1>Assembly webpackon!!!</h1>
+    <h1>Assemby webpackon!!!</h1>
     {add(10, 1)}
   </main>
 );

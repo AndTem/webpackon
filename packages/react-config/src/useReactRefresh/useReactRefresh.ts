@@ -5,13 +5,12 @@ import {
   addPlugins,
   compose,
 } from '@webpackon/core';
-import reactRefreshBabelPlugin from 'react-refresh/babel';
 import ReactRefreshTypeScript from 'react-refresh-typescript';
 import { useBabel, UseBabelParams } from '@webpackon/use-babel';
 import {
   useTs as useTsDecorator,
   UseTsParams,
-} from '@webpackon/use-typescript';
+} from '@webpackon/use-typescript-babel';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 
 type UseReactRefreshParams = Pick<UseBabelParams, 'transpileModules'> & {
@@ -32,8 +31,8 @@ export const useReactRefresh = createConfigDecorator<
       ...tsParams,
       loaderParams: {
         ...tsParams?.loaderParams,
-        options: {
-          ...tsParams?.loaderParams?.options,
+        tsLoaderOptions: {
+          ...tsParams?.loaderParams?.tsLoaderOptions,
           getCustomTransformers: () => ({
             before: isDevelopment(mode) ? [ReactRefreshTypeScript()] : [],
           }),
@@ -44,7 +43,7 @@ export const useReactRefresh = createConfigDecorator<
 
   const baseBabelPlugins = babelParams?.loaderParams?.options?.plugins || [];
   const babelPlugins = isDevelopment(mode)
-    ? [...baseBabelPlugins, reactRefreshBabelPlugin]
+    ? [...baseBabelPlugins, 'react-refresh/babel']
     : baseBabelPlugins;
 
   const modifyConfig = compose(

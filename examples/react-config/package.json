@@ -20,7 +20,7 @@
     "@webpackon/base-config": "*",
     "@webpackon/core": "*",
     "@webpackon/use-babel": "*",
-    "@webpackon/use-typescript": "*",
+    "@webpackon/use-typescript-babel": "*",
     "@webpackon/use-html": "*",
     "@webpackon/use-optimization": "*",
     "@webpackon/use-css": "*",

@@ -21,7 +21,6 @@
   },
   "dependencies": {
     "@webpackon/core": "^0.1.0",
-    "@webpackon/use-babel": "^0.1.0",
     "@webpackon/use-images": "^0.1.0",
     "@webpackon/use-fonts": "^0.1.0",
     "@webpackon/use-html": "^0.1.0",

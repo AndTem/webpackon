@@ -5,11 +5,9 @@ export type AdditionalEntryParams = {
   entry: webpack.Entry;
   output?: webpack.WebpackOptionsNormalized['output'];
   resolve?: webpack.ResolveOptions;
-  transpileModules?: string[];
   enableJSX?: boolean;
   templatePath?: string;
   htmlTitle?: string;
-  disableDefaultBabelLoader?: boolean;
   dev?: {
     useLocalIp?: boolean;
     autoOpen?: boolean;

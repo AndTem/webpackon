@@ -1,7 +1,6 @@
 import path from 'path';
 
 import { ModifyConfigFunc, isProduction, Mode, compose } from '@webpackon/core';
-import { useBabel } from '@webpackon/use-babel';
 import { useCss } from '@webpackon/use-css';
 import { useImages } from '@webpackon/use-images';
 import { useFonts } from '@webpackon/use-fonts';
@@ -30,10 +29,8 @@ export const modify: ModifyConfigFunc<AdditionalEntryParams> = (_, context) => {
     output,
     resolve = DEFAULT_RESOLVE,
     mode,
-    transpileModules,
     htmlTitle,
     templatePath,
-    disableDefaultBabelLoader,
     dev = {},
     production = {},
   } = context;
@@ -68,10 +65,6 @@ export const modify: ModifyConfigFunc<AdditionalEntryParams> = (_, context) => {
     useHtmlTemplate({ mode, title: htmlTitle, templatePath }),
     useOptimization({ mode, dropConsole, splitChunkCacheGroups }),
   ];
-
-  if (!disableDefaultBabelLoader) {
-    configModifiers.push(useBabel({ transpileModules }));
-  }
 
   return compose(...configModifiers)(baseConfig);
 };

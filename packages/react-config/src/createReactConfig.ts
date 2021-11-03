@@ -9,8 +9,6 @@ export const createReactConfig =
   (_, { mode }) => {
     const baseConfig = createBaseConfig({
       ...entryParams,
-      disableDefaultBabelLoader: true,
-      dev: { ...entryParams.dev, enableHotModuleReplacement: false },
       modify,
     })({}, { mode });
 
