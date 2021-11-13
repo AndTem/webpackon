@@ -1,12 +1,12 @@
-import { createConfigDecorator, addLoaders } from '@webpackon/core';
+import { createConfigDecorator, addLoaders } from '@webpackon/core/lib';
 
-import { createTsLoader, TsLoaderOptions } from '../tsLoader';
+import { createTsLoader, TsLoaderOptions } from './tsLoader';
 
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 export type UseTsParams = Pick<
   TsLoaderOptions,
-  'transpileModules' | 'enableTypeCheck' | 'transpileLoader'
+  'transpileModules' | 'enableTypeCheck' | 'transpileLoaderUseItems'
 > & {
   loaderParams?: TsLoaderOptions;
 };
@@ -16,13 +16,13 @@ const TS_EXTENSIONS = ['.ts', '.tsx'];
 export const useTs = createConfigDecorator<UseTsParams, true>(
   (
     config,
-    { transpileModules, enableTypeCheck, loaderParams, transpileLoader }
+    { transpileModules, enableTypeCheck, loaderParams, transpileLoaderUseItems }
   ) => {
     const modify = addLoaders([
       createTsLoader({
         transpileModules,
         enableTypeCheck,
-        transpileLoader,
+        transpileLoaderUseItems,
         ...loaderParams,
       }),
     ]);

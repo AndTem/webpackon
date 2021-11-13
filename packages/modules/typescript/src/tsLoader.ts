@@ -2,11 +2,11 @@ import {
   createLoader,
   LoaderCreatorParams,
   getExcludePackagesRegexp,
-} from '@webpackon/core';
+} from '@webpackon/core/lib';
 import webpack from 'webpack';
 
 type TsLoaderAddParams = {
-  transpileLoader: webpack.RuleSetUseItem;
+  transpileLoaderUseItems: webpack.RuleSetUseItem[];
   transpileModules?: string[];
   enableTypeCheck?: boolean;
   options?: Record<string, unknown>;
@@ -15,10 +15,15 @@ type TsLoaderAddParams = {
 export type TsLoaderOptions = LoaderCreatorParams<TsLoaderAddParams>;
 
 export const createTsLoader = createLoader<TsLoaderAddParams>(
-  ({ transpileModules, enableTypeCheck = false, options, transpileLoader }) => {
-    if (!transpileLoader) {
+  ({
+    transpileModules,
+    enableTypeCheck = false,
+    options,
+    transpileLoaderUseItems,
+  }) => {
+    if (!transpileLoaderUseItems) {
       throw Error(
-        '@webpackon/use-typescript error: transpileLoader params is required'
+        '@webpackon/use-typescript error: transpileLoaderItem params is required'
       );
     }
 
@@ -28,7 +33,7 @@ export const createTsLoader = createLoader<TsLoaderAddParams>(
         ? getExcludePackagesRegexp(transpileModules)
         : /node_modules/,
       use: [
-        transpileLoader,
+        ...transpileLoaderUseItems,
         {
           loader: 'ts-loader',
           options: {

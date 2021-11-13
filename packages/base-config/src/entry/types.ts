@@ -12,7 +12,7 @@ export type AdditionalEntryParams = {
     useLocalIp?: boolean;
     autoOpen?: boolean;
     proxy?: Record<string, unknown>;
-    enableHotModuleReplacement?: boolean;
+    hot?: boolean;
   };
   production?: {
     dropConsole?: boolean;

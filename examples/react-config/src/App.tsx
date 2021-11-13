@@ -1,5 +1,6 @@
 import { add } from 'core/utils';
 import reactLogoSrc from 'images/react-logo.svg';
+import './app.style.css';
 
 const App = () => (
   <main>

@@ -1,6 +1,5 @@
 import path from 'path';
 
-import webpack from 'webpack';
 import {
   createConfigDecorator,
   Mode,
@@ -12,30 +11,19 @@ type UseDevServerParams = {
   mode: Mode;
   outputPath: string;
   open?: boolean;
+  hot?: boolean;
   useLocalIp?: boolean;
   proxy?: Record<string, unknown>;
-  enableHotModuleReplacement?: boolean;
 };
 
 export const useDevServer = createConfigDecorator<UseDevServerParams, true>(
   (
     config,
-    {
-      mode,
-      outputPath,
-      open = false,
-      useLocalIp = false,
-      proxy,
-      enableHotModuleReplacement = true,
-    }
+    { mode, outputPath, open = false, useLocalIp = false, proxy, hot = true }
   ) => {
     if (isProduction(mode)) return config;
 
     const plugins = [];
-
-    if (enableHotModuleReplacement) {
-      plugins.push(new webpack.HotModuleReplacementPlugin());
-    }
 
     const modifyConfig = addPlugins(plugins);
 
@@ -45,7 +33,7 @@ export const useDevServer = createConfigDecorator<UseDevServerParams, true>(
       devServer: {
         static: outputPath,
         host: useLocalIp ? 'local-ip' : undefined,
-        hot: true,
+        hot,
         historyApiFallback: true,
         client: {
           overlay: true,

@@ -14,3 +14,4 @@ export {
   getExcludePackagesRegexp,
   getIncludePackagesRegexp,
 } from './common/utils';
+export { createPackageErrorGenerator } from './errors';
