@@ -28,7 +28,7 @@ export const useTs = createConfigDecorator<UseTsParams, true>(
     ]);
 
     const { extensions: configExtensions = [], plugins: configPlugins = [] } =
-      config.resolve;
+      config.resolve || {};
 
     const extensions = Array.from(
       new Set([...configExtensions, ...TS_EXTENSIONS])

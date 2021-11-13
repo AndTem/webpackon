@@ -35,7 +35,7 @@ export const useOptimization = createConfigDecorator<
       ...config.optimization,
       moduleIds: 'deterministic',
       minimizer: [
-        ...config.optimization.minimizer,
+        ...(config.optimization?.minimizer || []),
         new TerserWebpackPlugin({
           parallel: true,
           terserOptions: {
