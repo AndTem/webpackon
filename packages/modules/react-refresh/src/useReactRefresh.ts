@@ -42,6 +42,11 @@ export const useReactRefresh = createConfigDecorator<
     );
   }
 
+  const modifiedConfig = {
+    ...config,
+    devServer: { ...config.devServer, hot: true },
+  };
+
   if (babelLoaderIndex !== -1) {
     const modifyConfig = compose(
       addPlugins([new ReactRefreshWebpackPlugin()]),
@@ -62,7 +67,7 @@ export const useReactRefresh = createConfigDecorator<
       })
     );
 
-    return modifyConfig(config);
+    return modifyConfig(modifiedConfig);
   }
 
   if (swcLoaderIndex !== -1) {
@@ -89,8 +94,8 @@ export const useReactRefresh = createConfigDecorator<
       }),
     });
 
-    return modifyConfig(config);
+    return modifyConfig(modifiedConfig);
   }
 
-  return config;
+  return modifiedConfig;
 });
