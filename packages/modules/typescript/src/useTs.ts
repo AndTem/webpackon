@@ -1,4 +1,4 @@
-import { createConfigDecorator, addLoaders } from '@webpackon/core/lib';
+import { createConfigDecorator, addLoaders } from '@webpackon/core';
 
 import { createTsLoader, TsLoaderOptions } from './tsLoader';
 

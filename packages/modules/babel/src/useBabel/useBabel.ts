@@ -1,4 +1,9 @@
-import { createConfigDecorator, addLoaders } from '@webpackon/core';
+import {
+  createConfigDecorator,
+  addLoaders,
+  addResolveExtensions,
+  compose,
+} from '@webpackon/core';
 
 import { createBabelLoader, BabelLoaderOptions } from '../babelLoader';
 
@@ -8,7 +13,8 @@ export type UseBabelParams = Pick<BabelLoaderOptions, 'transpileModules'> & {
 
 export const useBabel = createConfigDecorator<UseBabelParams, false>(
   (config, { transpileModules, loaderParams } = {}) =>
-    addLoaders([createBabelLoader({ transpileModules, ...loaderParams })])(
-      config
-    )
+    compose(
+      addLoaders([createBabelLoader({ transpileModules, ...loaderParams })]),
+      addResolveExtensions(['.js', '.jsx'])
+    )(config)
 );

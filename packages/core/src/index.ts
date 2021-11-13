@@ -7,6 +7,7 @@ export {
   Context,
   ModifyConfigFunc,
   Config,
+  addResolveExtensions,
 } from './config';
 export { Mode, isProduction, isDevelopment } from './mode';
 export {

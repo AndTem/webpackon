@@ -8,6 +8,7 @@ import {
   Plugin,
   compose,
   addPlugins,
+  addResolveExtensions,
 } from '@webpackon/core';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
@@ -51,7 +52,8 @@ export const useCss = createConfigDecorator<UseCssParams, true>(
           ...postCssLoaderOptions,
         }),
       ]),
-      addPlugins([getMiniCssExtractPlugin(mode)])
+      addPlugins([getMiniCssExtractPlugin(mode)]),
+      addResolveExtensions(['.css'])
     );
 
     return modifyConfig({
