@@ -19,5 +19,7 @@
     "linting": "yarn run lint:fix && yarn run lint:types && yarn run tests",
     "release": "yarn run linting && yarn run build && npm publish"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@webpackon/core": "^0.1.0"
+  }
 }
