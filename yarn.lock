@@ -1918,7 +1918,7 @@ autoprefixer@^10.3.1:
     picocolors "^0.2.1"
     postcss-value-parser "^4.1.0"
 
-babel-jest@27.3.1, babel-jest@^27.3.1:
+babel-jest@^27.3.1:
   version "27.3.1"
   resolved "https://registry.yarnpkg.com/babel-jest/-/babel-jest-27.3.1.tgz#0636a3404c68e07001e434ac4956d82da8a80022"
   integrity sha512-SjIF8hh/ir0peae2D6S6ZKRhUy7q/DnpH7k/V6fT4Bgs/LXXUztOpX4G2tCgq8mLo5HA9mN6NmlFMeYtKmIsTQ==

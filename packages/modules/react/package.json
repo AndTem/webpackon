@@ -1,8 +1,8 @@
 {
-  "name": "@webpackon/react-config",
+  "name": "@webpackon/use-react",
   "version": "0.1.0",
-  "description": "Webpackon react config",
-  "homepage": "https://github.com/AndTem/webpackon/tree/master/packages/react-config#Readme",
+  "description": "Webpackon use react",
+  "homepage": "https://github.com/AndTem/webpackon/tree/master/packages/modules/typescript#Readme",
   "browser": "src/index.ts",
    "types": "src/index.ts",
    "main": "lib/index.js",
@@ -21,13 +21,10 @@
   },
   "dependencies": {
     "@webpackon/core": "^0.1.0",
-    "@webpackon/base-config": "^0.1.0",
     "@webpackon/use-optimization": "^0.1.0",
-    "@types/webpack": "5.28.0"
+    "@webpackon/use-react-refresh": "^0.1.0"
   },
   "peerDependencies": {
-    "webpack": "5.x.x",
-    "webpack-dev-server": "4.x.x",
-    "webpack-cli": "4.x.x"
+    "webpack": "5.x.x"
   }
 }
