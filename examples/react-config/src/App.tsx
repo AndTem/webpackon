@@ -10,7 +10,7 @@ const App = () => (
     <h1>Assemby webpackon!!!</h1>
     {add(10, 1)}
     {size({ d: 2 })}
-    <Button>btn</Button>
+    <Button>bn</Button>
   </main>
 );
 
