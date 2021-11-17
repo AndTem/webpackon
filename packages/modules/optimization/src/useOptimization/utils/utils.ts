@@ -10,7 +10,7 @@ type ChunkGroups = Array<{
 
 type CacheGroups = Record<
   string,
-  { test: RegExp; chunks: string; filename: string }
+  { test: RegExp; chunks: string; name: string; filename: string }
 >;
 
 const CHUNK_FILENAME = '[name].[chunkhash].js';
@@ -30,7 +30,8 @@ const addChunkGroups = (
       ...result,
       [chunkName]: {
         test: getIncludePackagesRegexp(includePackages),
-        chunks: 'initial',
+        chunks: 'all',
+        name: chunkName,
         filename: CHUNK_FILENAME,
       },
     }),
@@ -39,11 +40,12 @@ const addChunkGroups = (
 
 export const getCacheGroups = (chunkGroups?: ChunkGroups): CacheGroups => {
   const result = {
-    vendor: {
+    defaultVendors: {
       test: chunkGroups
         ? getExcludePackagesRegexp(getAllChunkGroupsPackages(chunkGroups))
-        : /node_modules/,
+        : /[\\/]node_modules[\\/]/,
       chunks: 'all',
+      name: 'modules',
       filename: CHUNK_FILENAME,
     },
   };

@@ -8,7 +8,7 @@ const { useBabel } = require('@webpackon/use-babel');
 const { useCss } = require('@webpackon/use-css');
 const { useFonts } = require('@webpackon/use-fonts');
 const { useImages } = require('@webpackon/use-images');
-const { useOptimization } = require('@webpackon/use-optimization');
+const { useDevServer } = require('@webpackon/use-dev-server');
 
 // module.exports = createConfig({
 //   templatePath: path.resolve(__dirname, 'public', 'index.html'),
@@ -32,7 +32,7 @@ module.exports = (_, { mode }) =>
     useCss({ mode }),
     useFonts(),
     useImages({ mode }),
-    useOptimization({ mode })
+    useDevServer({ mode })
   )({
     target: 'web',
     entry: path.resolve(__dirname, 'src', 'index.tsx'),

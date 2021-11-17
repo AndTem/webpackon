@@ -56,8 +56,6 @@ export const modify: ModifyConfigFunc<AdditionalEntryParams> = (_, context) => {
       proxy,
       hot,
       open: autoOpen,
-      outputPath:
-        typeof currentOutput === 'string' ? currentOutput : currentOutput.path,
     }),
     useFonts(),
     useImages({ mode }),

@@ -29,6 +29,13 @@ export const useOptimization = createConfigDecorator<
   return modifyConfig({
     ...config,
 
+    output: {
+      filename: '[name].[fullhash].bundle.js',
+      assetModuleFilename: 'static/[hash][ext][query]',
+      clean: true,
+      ...config?.output,
+    },
+
     devtool: 'hidden-source-map',
 
     optimization: {
