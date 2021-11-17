@@ -9,7 +9,6 @@ import {
 
 type UseDevServerParams = {
   mode: Mode;
-  outputPath: string;
   open?: boolean;
   hot?: boolean;
   useLocalIp?: boolean;
@@ -17,15 +16,15 @@ type UseDevServerParams = {
 };
 
 export const useDevServer = createConfigDecorator<UseDevServerParams, true>(
-  (
-    config,
-    { mode, outputPath, open = false, useLocalIp = false, proxy, hot = true }
-  ) => {
+  (config, { mode, open = false, useLocalIp = false, proxy, hot = true }) => {
     if (isProduction(mode)) return config;
 
     const plugins = [];
 
     const modifyConfig = addPlugins(plugins);
+
+    const outputPath =
+      config.output?.path || path.resolve(process.cwd(), 'dist');
 
     return modifyConfig({
       ...config,
@@ -46,7 +45,7 @@ export const useDevServer = createConfigDecorator<UseDevServerParams, true>(
       },
       cache: {
         type: 'filesystem',
-        cacheLocation: path.join(outputPath, '.cache'),
+        cacheLocation: path.join(outputPath, '.cache-dev'),
         compression: 'brotli',
       },
     });
