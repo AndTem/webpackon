@@ -25,7 +25,7 @@
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-loader": "^6.1.1",
     "autoprefixer": "^10.3.1",
-    "mini-css-extract-plugin": "^2.2.0",
+    "mini-css-extract-plugin": "^2.4.4",
     "optimize-css-assets-webpack-plugin": "^6.0.1",
     "@webpackon/core": "^0.1.0"
   }
