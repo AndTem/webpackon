@@ -1,5 +1,5 @@
 # Webpackon
-Webpackon - это коллекция декораторов для быстрой настройки webpack.
+Webpackon - this is a collection of decorators for a quick tune webpack.
 
 ## JS
 - [@webpackon/use-optimization]()
@@ -30,7 +30,7 @@ Webpackon - это коллекция декораторов для быстро
 - [@webpackon/core]()
 
 ## Example
-Полный пример можно посмотреть [здесь]()
+Full example is [here]()
 
 ### React example
 ```webpack.config.js```
