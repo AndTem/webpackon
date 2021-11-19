@@ -8,20 +8,23 @@ import {
 } from '@webpackon/core';
 import ImageMinimizerPlugin from 'image-minimizer-webpack-plugin';
 
-import { ImagesLoaderOptions, createImagesLoader } from '../imagesLoader';
+import {
+  UrlImagesLoaderOptions,
+  createUrlImagesLoader,
+} from '../urlImagesLoader';
 
-type UseImagesParams = {
+type UseUrlImagesParams = {
   mode: Mode;
-  loaderParams?: ImagesLoaderOptions;
+  loaderParams?: UrlImagesLoaderOptions;
   imageminPlugins?: Array<[string, Record<string, unknown>]>;
 };
 
-const DEFAULT_IMAGEMIN_PLUGINS: UseImagesParams['imageminPlugins'] = [
+const DEFAULT_IMAGEMIN_PLUGINS: UseUrlImagesParams['imageminPlugins'] = [
   ['jpegtran', { progressive: true }],
   ['svgo', {}],
 ];
 
-export const useImages = createConfigDecorator<UseImagesParams, true>(
+export const useUrlImages = createConfigDecorator<UseUrlImagesParams, true>(
   (config, { loaderParams = {}, imageminPlugins, mode }) => {
     const prodPlugins = [
       new ImageMinimizerPlugin({
@@ -33,7 +36,7 @@ export const useImages = createConfigDecorator<UseImagesParams, true>(
 
     const modifyConfig = compose(
       addPlugins(isProduction(mode) ? prodPlugins : []),
-      addLoaders([createImagesLoader(loaderParams)])
+      addLoaders([createUrlImagesLoader(loaderParams)])
     );
 
     return modifyConfig(config);

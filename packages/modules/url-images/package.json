@@ -1,5 +1,5 @@
 {
-  "name": "@webpackon/use-images",
+  "name": "@webpackon/use-url-images",
   "version": "0.1.0",
   "description": "Webpackon use images",
   "homepage": "https://github.com/AndTem/webpackon/tree/master/packages/modules/images#Readme",
@@ -22,6 +22,7 @@
   "dependencies": {
     "image-minimizer-webpack-plugin": "2.2.0",
     "imagemin-jpegtran": "7.0.0",
-    "imagemin-svgo": "9.0.0"
+    "imagemin-svgo": "9.0.0",
+    "@webpackon/core": "^0.1.0"
   }
 }

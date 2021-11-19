@@ -7,7 +7,7 @@ const { useHtmlTemplate } = require('@webpackon/use-html');
 const { useBabel } = require('@webpackon/use-babel');
 const { useCss } = require('@webpackon/use-css');
 const { useFonts } = require('@webpackon/use-fonts');
-const { useImages } = require('@webpackon/use-images');
+const { useUrlImages } = require('@webpackon/use-url-images');
 const { useDevServer } = require('@webpackon/use-dev-server');
 const { useOptimization } = require('@webpackon/use-optimization');
 
@@ -21,7 +21,7 @@ module.exports = (_, { mode }) =>
     useTs({ transpileLoaderUseItems: ['babel-loader'] }),
     useCss({ mode }),
     useFonts(),
-    useImages({ mode }),
+    useUrlImages({ mode }),
     useDevServer({ mode }),
     useOptimization({
       mode,

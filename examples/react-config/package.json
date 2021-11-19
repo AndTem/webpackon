@@ -27,7 +27,7 @@
     "@webpackon/use-optimization": "*",
     "@webpackon/use-css": "*",
     "@webpackon/use-fonts": "*",
-    "@webpackon/use-images": "*",
+    "@webpackon/use-url-images": "*",
     "@webpackon/use-dev-server": "*"
   },
   "devDependencies": {
