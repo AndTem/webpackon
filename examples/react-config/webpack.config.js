@@ -11,17 +11,6 @@ const { useImages } = require('@webpackon/use-images');
 const { useDevServer } = require('@webpackon/use-dev-server');
 const { useOptimization } = require('@webpackon/use-optimization');
 
-// module.exports = createConfig({
-//   templatePath: path.resolve(__dirname, 'public', 'index.html'),
-//   useTs: true,
-//   entry: path.resolve(__dirname, 'src', 'index.tsx'),
-//   modify: (config, { mode }) =>
-//     compose(
-//       useReactRefresh({ mode }),
-//       useTs({ transpileLoaderUseItems: ['babel-loader'] })
-//     )(config),
-// });
-
 module.exports = (_, { mode }) =>
   compose(
     useReactRefresh({ mode }),
