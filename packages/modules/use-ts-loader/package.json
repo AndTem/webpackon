@@ -1,7 +1,7 @@
 {
-  "name": "@webpackon/use-typescript",
+  "name": "@webpackon/use-ts-loader",
   "version": "0.1.0",
-  "description": "Webpackon use typescript",
+  "description": "Webpackon use ts loader",
   "homepage": "https://github.com/AndTem/webpackon/tree/master/packages/modules/typescript#Readme",
   "browser": "src/index.ts",
    "types": "src/index.ts",
@@ -20,8 +20,9 @@
     "release": "yarn run linting && yarn run build && npm publish"
   },
   "dependencies": {
+    "ts-loader": "^9.2.5",
     "@webpackon/core": "^0.1.0",
-    "tsconfig-paths-webpack-plugin": "3.5.1"
+    "@webpackon/use-typescript": "^0.1.0"
   },
   "peerDependencies": {
     "webpack": "5.x.x"

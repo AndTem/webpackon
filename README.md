@@ -1,7 +1,9 @@
 # Webpackon
-Webpackon - this is a collection of decorators for a quick tune webpack.
+<p align="center">
+  <img src='https://raw.githubusercontent.com/AndTem/webpackon/master/logo/logo.svg' height='80' width='80'>
+</p>
 
-# <img src='https://raw.githubusercontent.com/AndTem/webpackon/master/logo/logo.svg' height='80'>
+Webpackon - this is a collection of decorators for a quick tune webpack 5.
 
 ## JS
 - [@webpackon/use-optimization]()

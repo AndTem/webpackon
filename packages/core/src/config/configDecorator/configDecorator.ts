@@ -1,8 +1,5 @@
 import { PartialConfig } from '../types';
 
-function createConfigDecorator(
-  creator: (config: PartialConfig) => PartialConfig
-): () => (config: PartialConfig) => PartialConfig;
 function createConfigDecorator<
   CreatorParams extends Record<string, any>,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
