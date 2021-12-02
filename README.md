@@ -1,6 +1,6 @@
 # Webpackon
 <p align="center">
-  <img src='https://raw.githubusercontent.com/AndTem/webpackon/master/logo/logo.svg' height='80' width='80'>
+  <img src='https://raw.githubusercontent.com/AndTem/webpackon/master/images/logo.svg' height='80' width='80'>
 </p>
 
 Webpackon - this is a collection of decorators for a quick tune webpack 5.
@@ -76,3 +76,6 @@ module.exports = (_, { mode }) =>
   });
 
 ```
+
+Result:
+<img src='https://raw.githubusercontent.com/AndTem/webpackon/master/images/react-example-result.png'>
