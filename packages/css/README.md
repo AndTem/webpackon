@@ -11,6 +11,15 @@ Features:
 - optimize css with cssnano
 - adds autoprefixer and postcss flexbugsFixes
 
+## Install
+```shell
+npm i @webpackon/use-css --save
+```
+
+```shell
+yarn add @webpackon/use-css
+```
+
 ## API
 
 ```ts

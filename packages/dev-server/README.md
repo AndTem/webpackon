@@ -11,6 +11,15 @@ Features:
 - adds a cache for faster build in dev mode
 - enable hot
 
+## Install
+```shell
+npm i @webpackon/use-dev-server webpack webpack-dev-server webpack-cli --save
+```
+
+```shell
+yarn add @webpackon/use-dev-server webpack webpack-dev-server webpack-cli
+```
+
 ## API
 
 ```ts

@@ -14,6 +14,15 @@ Supported extensions:
 - woff
 - woff2
 
+## Install
+```shell
+npm i @webpackon/use-fonts --save
+```
+
+```shell
+yarn add @webpackon/use-fonts
+```
+
 ## API
 
 ```ts

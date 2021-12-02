@@ -7,6 +7,15 @@
 
 Adds babel support.
 
+## Install
+```shell
+npm i @webpackon/use-babel --save
+```
+
+```shell
+yarn add @webpackon/use-babel
+```
+
 ## API
 
 ```ts

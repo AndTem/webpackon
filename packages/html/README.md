@@ -10,6 +10,15 @@ Adds html template support (uses html-webpack-config).
 Features:
 - minify html for production
 
+## Install
+```shell
+npm i @webpackon/use-html --save
+```
+
+```shell
+yarn add @webpackon/use-html
+```
+
 ## API
 
 ```ts
