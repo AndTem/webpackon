@@ -25,11 +25,11 @@ const modifyPackageJSON = () => {
           url: 'https://github.com/AndTem/webpackon/issues',
         },
         keywords: [
+          'webpackon',
           'webpack',
           'webpack 5',
           'webpack config',
           'webpack-config',
-          'webpackon',
           ...keywords,
         ],
         main: './index.js',

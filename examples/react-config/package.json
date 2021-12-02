@@ -27,7 +27,7 @@
     "@babel/preset-react": "7.12.10",
     "@webpackon/core": "*",
     "@webpackon/use-babel": "*",
-    "@webpackon/use-typescript": "*",
+    "@webpackon/use-ts": "*",
     "@webpackon/use-ts-loader": "*",
     "@webpackon/use-react-refresh": "*",
     "@webpackon/use-html": "*",

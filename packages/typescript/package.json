@@ -1,11 +1,12 @@
 {
-  "name": "@webpackon/use-typescript",
+  "name": "@webpackon/use-ts",
   "version": "0.1.0",
   "description": "Webpackon use typescript",
-  "homepage": "https://github.com/AndTem/webpackon/tree/master/packages/modules/typescript#Readme",
+  "homepage": "https://github.com/AndTem/webpackon/tree/master/packages/typescript#Readme",
+  "keywords": ["use ts", "use typescript", "webpackon ts"],
   "browser": "src/index.ts",
-   "types": "src/index.ts",
-   "main": "lib/index.js",
+  "types": "src/index.ts",
+  "main": "lib/index.js",
   "scripts": {
     "remove-build": "rimraf lib/*",
     "prebuild": "yarn run remove-build",

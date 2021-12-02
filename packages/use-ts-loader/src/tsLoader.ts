@@ -23,7 +23,7 @@ export const createTsLoader = createLoader<TsLoaderAddParams>(
   }) => {
     if (!transpileLoaderUseItems) {
       throw Error(
-        '@webpackon/use-typescript error: transpileLoaderItem params is required'
+        '@webpackon/use-ts error: transpileLoaderItem params is required'
       );
     }
 

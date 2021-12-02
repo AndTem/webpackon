@@ -10,7 +10,7 @@ Webpackon - this is a collection of decorators for a quick tune webpack 5.
 - [@webpackon/use-babel]()
 
 ## TypeScript
-- [@webpackon/use-typeScript]()
+- [@webpackon/use-ts]()
 
 ## CSS
 - [@webpackon/use-css]()
@@ -42,7 +42,7 @@ Full example is [here]()
 const path = require('path');
 
 const { compose } = require('@webpackon/core');
-const { useTs } = require('@webpackon/use-typescript');
+const { useTs } = require('@webpackon/use-ts');
 const { useReactRefresh } = require('@webpackon/use-react-refresh');
 const { useHtmlTemplate } = require('@webpackon/use-html');
 const { useBabel } = require('@webpackon/use-babel');

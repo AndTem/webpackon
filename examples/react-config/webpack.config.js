@@ -1,7 +1,7 @@
 const path = require('path');
 
 const { compose } = require('@webpackon/core');
-const { useTs } = require('@webpackon/use-typescript');
+const { useTs } = require('@webpackon/use-ts');
 const { useReactRefresh } = require('@webpackon/use-react-refresh');
 const { useHtmlTemplate } = require('@webpackon/use-html');
 const { useBabel } = require('@webpackon/use-babel');

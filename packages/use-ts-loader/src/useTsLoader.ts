@@ -1,5 +1,5 @@
 import { createConfigDecorator, addLoaders, compose } from '@webpackon/core';
-import { useTs } from '@webpackon/use-typescript';
+import { useTs } from '@webpackon/use-ts';
 
 import { createTsLoader, TsLoaderOptions } from './tsLoader';
 
