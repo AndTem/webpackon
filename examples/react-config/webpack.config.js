@@ -3,7 +3,7 @@ const path = require('path');
 const { compose } = require('@webpackon/core');
 const { useTs } = require('@webpackon/use-ts');
 const { useReactRefresh } = require('@webpackon/use-react-refresh');
-const { useHtmlTemplate } = require('@webpackon/use-html');
+const { useHtml } = require('@webpackon/use-html');
 const { useBabel } = require('@webpackon/use-babel');
 const { useCss } = require('@webpackon/use-css');
 const { useFonts } = require('@webpackon/use-fonts');
@@ -14,7 +14,7 @@ const { useOptimization } = require('@webpackon/use-optimization');
 module.exports = (_, { mode }) =>
   compose(
     useReactRefresh({ mode }),
-    useHtmlTemplate({
+    useHtml({
       mode,
       templatePath: path.resolve(__dirname, 'public', 'index.html'),
     }),

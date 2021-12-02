@@ -1,1 +1,1 @@
-export * from './useHtmlTemplate';
+export * from './useHtml';

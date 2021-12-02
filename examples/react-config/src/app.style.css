@@ -1,3 +1,11 @@
 h1 {
   color: #FF6F00;
 }
+
+@font-face {
+  font-weight: 400;
+  font-style: normal;
+  font-family: Roboto;
+  font-display: swap;
+  src: url('~public/fonts/Roboto-Black.ttf') format('truetype');
+}

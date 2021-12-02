@@ -1,6 +1,6 @@
 import { createConfigDecorator, addLoaders } from '@webpackon/core';
 
-import { FontsLoaderOptions, createFontsLoader } from '../fontsLoader';
+import { FontsLoaderOptions, createFontsLoader } from './fontsLoader';
 
 type UseFontsParams = {
   loaderParams?: FontsLoaderOptions;
