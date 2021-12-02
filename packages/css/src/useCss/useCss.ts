@@ -11,7 +11,7 @@ import {
   addResolveExtensions,
 } from '@webpackon/core';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 
 import { createCssLoader, CssLoaderOptions } from '../cssLoader';
 import { createPostCssLoader, PostCssLoaderOptions } from '../postCssLoader';
@@ -62,7 +62,7 @@ export const useCss = createConfigDecorator<UseCssParams, true>(
         ...config.optimization,
         minimizer: [
           ...(config.optimization?.minimizer || []),
-          new OptimizeCSSAssetsPlugin() as any,
+          new CssMinimizerPlugin(),
         ],
       },
     });
