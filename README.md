@@ -76,6 +76,5 @@ module.exports = (_, { mode }) =>
   });
 
 ```
-
 Result:
 <img src='https://raw.githubusercontent.com/AndTem/webpackon/master/images/react-example-result.png'>
