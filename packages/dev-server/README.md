@@ -1,11 +1,9 @@
 <p align="center">
   <img src='https://raw.githubusercontent.com/AndTem/webpackon/master/images/logo.svg' height='80' width='80'>
-  <a href="https://github.com/AndTem/webpackon#readme">Webpackon</a>
 </p>
 <p align="center">
   <a href="https://github.com/AndTem/webpackon#readme">Webpackon</a>
 </p>
-
 # @webpackon/use-dev-server
 
 Enables dev-server and optimizes development mode.
