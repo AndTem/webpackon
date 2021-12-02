@@ -62,7 +62,7 @@ export const useCss = createConfigDecorator<UseCssParams, true>(
         ...config.optimization,
         minimizer: [
           ...(config.optimization?.minimizer || []),
-          new OptimizeCSSAssetsPlugin(),
+          new OptimizeCSSAssetsPlugin() as any,
         ],
       },
     });

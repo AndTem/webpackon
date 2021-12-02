@@ -1,7 +1,7 @@
 import { Config } from '../types';
 
 export const addResolveExtensions =
-  (extensions: Config['resolve']['extensions']) =>
+  (extensions: string[]) =>
   (config: Partial<Config>): Partial<Config> => {
     const resultExtensions = new Set([
       ...(config.resolve?.extensions || []),

@@ -14,8 +14,8 @@ function createConfigDecorator<
 >(
   creator: (config: PartialConfig, params?: CreatorParams) => PartialConfig
 ): (params?: CreatorParams) => (config: PartialConfig) => PartialConfig;
-function createConfigDecorator(creator) {
-  return (params) => (config) => creator(config, params);
+function createConfigDecorator(creator: any) {
+  return (params: any) => (config: PartialConfig) => creator(config, params);
 }
 
 export { createConfigDecorator };

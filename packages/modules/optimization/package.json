@@ -23,5 +23,8 @@
     "@webpackon/core": "^0.1.0",
     "terser-webpack-plugin": "^5.1.4",
     "case-sensitive-paths-webpack-plugin": "^2.4.0"
+  },
+  "devDependencies": {
+    "@types/case-sensitive-paths-webpack-plugin": "2.1.6"
   }
 }

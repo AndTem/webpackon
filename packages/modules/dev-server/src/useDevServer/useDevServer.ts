@@ -5,6 +5,7 @@ import {
   Mode,
   isProduction,
   addPlugins,
+  Plugin,
 } from '@webpackon/core';
 
 type UseDevServerParams = {
@@ -19,7 +20,7 @@ export const useDevServer = createConfigDecorator<UseDevServerParams, true>(
   (config, { mode, open = false, useLocalIp = false, proxy, hot = true }) => {
     if (isProduction(mode)) return config;
 
-    const plugins = [];
+    const plugins: Plugin[] = [];
 
     const modifyConfig = addPlugins(plugins);
 

@@ -28,5 +28,10 @@
     "mini-css-extract-plugin": "^2.4.4",
     "optimize-css-assets-webpack-plugin": "^6.0.1",
     "@webpackon/core": "^0.1.0"
+  },
+  "devDependencies": {
+    "@types/mini-css-extract-plugin": "2.4.0",
+    "@types/postcss-flexbugs-fixes": "4.2.1",
+    "@types/optimize-css-assets-webpack-plugin": "5.0.4"
   }
 }

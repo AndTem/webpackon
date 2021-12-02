@@ -15,10 +15,11 @@ module.exports = (_, { mode }) =>
   compose(
     useReactRefresh({ mode }),
     useHtmlTemplate({
+      mode,
       templatePath: path.resolve(__dirname, 'public', 'index.html'),
     }),
-    useBabel(),
-    useTs({ transpileLoaderUseItems: ['babel-loader'] }),
+    useBabel({ useTs: true }),
+    useTs(),
     useCss({ mode }),
     useFonts(),
     useUrlImages({ mode }),

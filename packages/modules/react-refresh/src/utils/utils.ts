@@ -8,7 +8,7 @@ export const findLoaderIndex = ({
   config: Config;
   loaderName: string;
 }): number =>
-  config?.module?.rules.findIndex((rule) => {
+  config?.module?.rules.findIndex((rule: webpack.RuleSetRule) => {
     if (typeof rule !== 'object') return false;
 
     if (typeof rule.use === 'string') {
