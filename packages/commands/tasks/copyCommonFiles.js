@@ -11,6 +11,14 @@ const copyCommonFiles = () => {
 
     process.exit(1);
   });
+
+  copy(path.join(process.cwd(), 'README.md'), './lib/README.md').catch(
+    (error) => {
+      console.error(error);
+
+      process.exit(1);
+    }
+  );
 };
 
 module.exports = { copyCommonFiles };
