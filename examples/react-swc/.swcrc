@@ -1,8 +1,13 @@
 {
+  "env": {
+    "mode": "entry",
+    "coreJs": 3
+  },
   "jsc": {
     "parser": {
       "syntax": "typescript",
       "tsx": true,
+      "decorators": true
     },
     "transform": {
       "react": { "runtime": "automatic" }
