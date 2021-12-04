@@ -12,6 +12,7 @@ import { findLoaderIndex, modifyLoader } from './utils';
 
 export type UseReactRefreshParams = {
   mode: Mode;
+  transformRuntime?: 'automatic' | 'classic';
 };
 
 const generateError = createPackageErrorGenerator(
@@ -24,7 +25,7 @@ const SWC_LOADER_NAME = 'swc-loader';
 export const useReactRefresh = createConfigDecorator<
   UseReactRefreshParams,
   true
->((config, { mode }) => {
+>((config, { mode, transformRuntime = 'automatic' }) => {
   if (!isDevelopment(mode)) return config;
 
   const babelLoaderIndex = findLoaderIndex({
@@ -71,28 +72,32 @@ export const useReactRefresh = createConfigDecorator<
   }
 
   if (swcLoaderIndex !== -1) {
-    const modifyConfig = modifyLoader({
-      ruleIndex: babelLoaderIndex,
-      loaderName: SWC_LOADER_NAME,
-      generateNewUseItem: (useItem) => ({
-        ...useItem,
-        loader: SWC_LOADER_NAME,
-        options: {
-          ...useItem.options,
-          jsc: {
-            ...useItem.options?.jsc,
-            transform: {
-              ...useItem.options?.jsc?.transform,
-              react: {
-                ...useItem.options?.jsc?.transform?.react,
-                development: true,
-                refresh: true,
+    const modifyConfig = compose(
+      addPlugins([new ReactRefreshWebpackPlugin()]),
+      modifyLoader({
+        ruleIndex: swcLoaderIndex,
+        loaderName: SWC_LOADER_NAME,
+        generateNewUseItem: (useItem) => ({
+          ...useItem,
+          loader: SWC_LOADER_NAME,
+          options: {
+            ...useItem.options,
+            jsc: {
+              ...useItem.options?.jsc,
+              transform: {
+                ...useItem.options?.jsc?.transform,
+                react: {
+                  ...useItem.options?.jsc?.transform?.react,
+                  runtime: transformRuntime,
+                  development: true,
+                  refresh: true,
+                },
               },
             },
           },
-        },
-      }),
-    });
+        }),
+      })
+    );
 
     return modifyConfig(modifiedConfig);
   }

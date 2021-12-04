@@ -34,10 +34,12 @@ useReactRefresh(params: UseReactRefreshParams)(config: WebpackConfig)
 ```ts
 type UseReactRefreshParams = {
   mode: 'development' | 'production';
+  transformRuntime?: 'automatic' | 'classic';
 };
 ```
 
 - ```mode``` - webpack mode
+- ```transformRuntime``` - [swc option](https://swc.rs/docs/configuration/compilation#jsctransformreactruntime) (default - ```automatic```)
 
 ## Example with babel and ts
 Full examples are [here](https://github.com/AndTem/webpackon/tree/master/examples)

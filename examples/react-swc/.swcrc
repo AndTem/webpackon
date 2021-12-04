@@ -1,6 +1,6 @@
 {
   "env": {
-    "mode": "entry",
+    "mode": "usage",
     "coreJs": 3
   },
   "jsc": {
