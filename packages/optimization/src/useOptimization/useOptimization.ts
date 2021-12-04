@@ -24,7 +24,7 @@ export const useOptimization = createConfigDecorator<
 >((config, { mode, dropConsole = true, splitChunkCacheGroups }) => {
   if (!isProduction(mode)) return config;
 
-  const modifyConfig = addPlugins([new CaseSensitivePathsPlugin()]);
+  const modifyConfig = addPlugins([new CaseSensitivePathsPlugin() as any]);
 
   return modifyConfig({
     ...config,
