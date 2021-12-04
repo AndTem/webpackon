@@ -8,7 +8,7 @@ export const findLoaderIndex = ({
   config: Config;
   loaderName: string;
 }): number =>
-  config?.module?.rules.findIndex((rule: webpack.RuleSetRule) => {
+  (config?.module?.rules as webpack.RuleSetRule[]).findIndex((rule) => {
     if (typeof rule !== 'object') return false;
 
     if (typeof rule.use === 'string') {
@@ -49,7 +49,7 @@ export const modifyLoader =
     loaderName: string;
   }) =>
   (config: Config): Config => {
-    const rules = config.module.rules as webpack.RuleSetRule[];
+    const rules = config.module?.rules as webpack.RuleSetRule[];
 
     const generateNewRule = (
       rule: webpack.RuleSetRule
