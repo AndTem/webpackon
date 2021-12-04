@@ -53,6 +53,7 @@ type UseUrlImagesParams = {
 - ```imageminPlugins``` - [image-minimizer-webpack-plugin](https://www.npmjs.com/package/image-minimizer-webpack-plugin) ```plugin``` option
 
 ## Example
+Full example is [here](https://github.com/AndTem/webpackon/tree/master/examples/react-config)
 
 ```webpack.config.js```
 ```js

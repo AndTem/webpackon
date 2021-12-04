@@ -53,6 +53,7 @@ export type UseDevServerParams = {
 
 
 ## Example
+Full example is [here](https://github.com/AndTem/webpackon/tree/master/examples/react-config)
 
 ```js
 const path = require('path');

@@ -56,6 +56,7 @@ export type UseCssParams = {
 - postCssLoaderOptions.options - [postcss-loader option](https://www.npmjs.com/package/postcss-loader#Options)
 
 ## Example
+Full example is [here](https://github.com/AndTem/webpackon/tree/master/examples/react-config)
 
 ```js
 const path = require('path');
