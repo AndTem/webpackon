@@ -35,9 +35,9 @@
 - [@webpackon/core]()
 
 ## Example
-Full example is [here](https://github.com/AndTem/webpackon/tree/master/examples/react-config)
+Full examples are [here](https://github.com/AndTem/webpackon/tree/master/examples)
 
-### React example
+### React with babel example
 ```webpack.config.js```
 
 ```js

@@ -50,7 +50,7 @@ useBabel({
 - loaderParams.options - [babel-loader options](https://www.npmjs.com/package/babel-loader#Options)
 
 ## TS example
-Full example is [here](https://github.com/AndTem/webpackon/tree/master/examples/react-config)
+Full example is [here](https://github.com/AndTem/webpackon/tree/master/examples/react-babel)
 
 ```webpack.config.js```
 ```js

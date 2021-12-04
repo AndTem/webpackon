@@ -29,7 +29,7 @@ useTs()(config: WebpackConfig)
 ```
 
 ## Example
-Full example is [here](https://github.com/AndTem/webpackon/tree/master/examples/react-config)
+Full examples are [here](https://github.com/AndTem/webpackon/tree/master/examples)
 
 ```js
 const path = require('path');
