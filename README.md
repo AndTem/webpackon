@@ -1,6 +1,6 @@
 # Webpackon
 <p align="center">
-  <img src='https://raw.githubusercontent.com/AndTem/webpackon/master/images/logo.svg' height='80' width='80'>
+  <img src='https://raw.githubusercontent.com/AndTem/webpackon/master/images/logo.svg' height='120' width='120'>
 </p>
 
 Webpackon - this is a collection of decorators for a quick tune webpack 5.

@@ -1,12 +1,14 @@
 <p align="center">
-  <img src='https://raw.githubusercontent.com/AndTem/webpackon/master/images/logo.svg' height='80' width='80'>
+  <img src='https://raw.githubusercontent.com/AndTem/webpackon/master/images/logo.svg' height='120' width='120'>
 </p>
 <p align="center">
   <a href="https://github.com/AndTem/webpackon#readme">Webpackon</a>
 </p>
 # @webpackon/use-babel
 
-Adds babel support.
+Features:
+- adds babel support
+- simple transpiling of modules
 
 ## Install
 ```shell
