@@ -52,7 +52,7 @@ export const modifyLoader =
     const rules = config.module?.rules as webpack.RuleSetRule[];
 
     const generateNewRule = (
-      rule: webpack.RuleSetRule
+      rule: webpack.RuleSetRule = {}
     ): webpack.RuleSetRule => {
       if (typeof rule.use === 'string') {
         return { ...rule, use: [generateNewUseItem({})] };
