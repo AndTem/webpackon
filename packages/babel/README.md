@@ -51,6 +51,7 @@ useBabel({
 
 ## TS example
 
+```webpack.config.js```
 ```js
 const path = require('path');
 
@@ -68,6 +69,28 @@ module.exports = (_, { mode }) =>
   });
 ```
 
+```babel.config.js```
+```js
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage",
+        "corejs": 3
+      }
+    ],
+    [
+			"@babel/preset-typescript",
+      {
+        "isTSX": true,
+        "allExtensions": true
+      }
+		],
+  ]
+}
+```
+
 ## JS example
 
 ```js
@@ -83,4 +106,18 @@ module.exports = (_, { mode }) =>
     target: 'web',
     entry: path.resolve(__dirname, 'src', 'index.tsx'),
   });
+```
+
+```babel.config.js```
+```js
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "usage",
+        "corejs": 3
+      }
+    ]
+}
 ```

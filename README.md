@@ -2,8 +2,9 @@
 <p align="center">
   <img src='https://raw.githubusercontent.com/AndTem/webpackon/master/images/logo.svg' height='120' width='120'>
 </p>
-
-Webpackon - this is a collection of decorators for a quick tune webpack 5.
+<p align="center">
+  Webpackon - this is a collection of decorators for a quick tune webpack 5.
+</p>
 
 ## JS
 - [@webpackon/use-optimization]()
@@ -42,16 +43,16 @@ Full example is [here]()
 ```js
 const path = require('path');
 
-const {compose} = require('@webpackon/core');
-const {useTs} = require('@webpackon/use-ts');
-const {useReactRefresh} = require('@webpackon/use-react-refresh');
-const {useHtml} = require('@webpackon/use-html');
-const {useBabel} = require('@webpackon/use-babel');
-const {useCss} = require('@webpackon/use-css');
-const {useFonts} = require('@webpackon/use-fonts');
-const {useUrlImages} = require('@webpackon/use-url-images');
-const {useDevServer} = require('@webpackon/use-dev-server');
-const {useOptimization} = require('@webpackon/use-optimization');
+const { compose } = require('@webpackon/core');
+const { useTs } = require('@webpackon/use-ts');
+const { useReactRefresh} = require('@webpackon/use-react-refresh');
+const { useHtml } = require('@webpackon/use-html');
+const { useBabel } = require('@webpackon/use-babel');
+const { useCss } = require('@webpackon/use-css');
+const { useFonts } = require('@webpackon/use-fonts');
+const { useUrlImages } = require('@webpackon/use-url-images');
+const { useDevServer } = require('@webpackon/use-dev-server');
+const { useOptimization } = require('@webpackon/use-optimization');
 
 module.exports = (_, {mode}) =>
   compose(
@@ -77,5 +78,6 @@ module.exports = (_, {mode}) =>
     entry: path.resolve(__dirname, 'src', 'index.tsx'),
   });
 ```
+
 Result:
 <img src='https://raw.githubusercontent.com/AndTem/webpackon/master/images/react-example-result.png'>
