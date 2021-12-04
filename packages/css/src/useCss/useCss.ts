@@ -58,13 +58,15 @@ export const useCss = createConfigDecorator<UseCssParams, true>(
 
     return modifyConfig({
       ...config,
-      optimization: {
-        ...config.optimization,
-        minimizer: [
-          ...(config.optimization?.minimizer || []),
-          new CssMinimizerPlugin(),
-        ],
-      },
+      optimization: isProduction(mode)
+        ? {
+            ...config.optimization,
+            minimizer: [
+              ...(config.optimization?.minimizer || []),
+              new CssMinimizerPlugin(),
+            ],
+          }
+        : config.optimization,
     });
   }
 );

@@ -21,7 +21,7 @@ export const createCssLoader = createLoader<CssLoaderOptions>(
       isProduction(mode) ? MiniCssExtractPlugin.loader : 'style-loader',
       {
         loader: 'css-loader',
-        options: { importLoaders: 1, modules: enableCssModules, ...options },
+        options: { modules: enableCssModules, ...options },
       },
     ],
   })
