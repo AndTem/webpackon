@@ -1,5 +1,5 @@
 {
-  "name": "@webpackon/react-config-example",
+  "name": "@webpackon/react-swc-example",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -26,7 +26,7 @@
     "@babel/preset-env": "7.12.11",
     "@babel/preset-react": "7.12.10",
     "@webpackon/core": "*",
-    "@webpackon/use-babel": "*",
+    "@webpackon/use-swc": "*",
     "@webpackon/use-ts": "*",
     "@webpackon/use-ts-loader": "*",
     "@webpackon/use-react-refresh": "*",
