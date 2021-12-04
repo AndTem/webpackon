@@ -9,6 +9,7 @@
 ## JS
 - [@webpackon/use-optimization]()
 - [@webpackon/use-babel]()
+- [@webpackon/use-swc]()
 
 ## TypeScript
 - [@webpackon/use-ts]()
