@@ -5,20 +5,20 @@ import {
   compose,
 } from '@webpackon/core/lib';
 
-import { createBabelLoader, BabelLoaderOptions } from './babelLoader';
+import { createSwcLoader, SwcLoaderOptions } from './swcLoader';
 
-export type UseBabelParams = Pick<
-  BabelLoaderOptions,
+export type UseSwcParams = Pick<
+  SwcLoaderOptions,
   'transpileModules' | 'useTs'
 > & {
-  loaderParams?: BabelLoaderOptions;
+  loaderParams?: SwcLoaderOptions;
 };
 
-export const useBabel = createConfigDecorator<UseBabelParams, false>(
+export const useSwc = createConfigDecorator<UseSwcParams, false>(
   (config, { transpileModules, loaderParams, useTs } = {}) =>
     compose(
       addLoaders([
-        createBabelLoader({ transpileModules, useTs, ...loaderParams }),
+        createSwcLoader({ transpileModules, useTs, ...loaderParams }),
       ]),
       addResolveExtensions(
         useTs ? ['.js', '.jsx', '.ts', '.tsx'] : ['.js', '.jsx']
