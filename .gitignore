@@ -6,3 +6,4 @@
 npm-debug.*
 *node_modules/
 *lib
+yarn.lock
