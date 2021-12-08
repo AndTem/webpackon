@@ -16,9 +16,10 @@
     "modify-package": "rep-commander modifyPackageJSON",
     "lint:fix": "eslint ./src --fix --ext .ts",
     "lint:types": "tsc --noEmit",
-    "tests": "jest",
+    "tests": "jest --passWithNoTests",
     "linting": "yarn run lint:fix && yarn run lint:types && yarn run tests",
-    "release": "yarn run linting && yarn run build && npm publish"
+    "prerelease": "yarn run linting && yarn run build",
+    "release": "npm publish ./lib"
   },
   "dependencies": {
     "html-webpack-plugin": "5.3.2",

@@ -11,7 +11,7 @@
     "lint:fix": "yarn workspaces run lint:fix",
     "lint": "eslint --fix --quiet",
     "lint:types": "yarn workspaces run lint:types",
-    "tests": "jest",
+    "tests": "jest --passWithNoTests",
     "build:all": "yarn workspaces run build"
   },
   "devDependencies": {
