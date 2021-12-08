@@ -8,8 +8,8 @@
 # @webpackon/use-ts
 
 Features:
-- adds typescript extensions
 - synchronization tsconfig paths with webpack aliases
+- adds typescript extensions
 
 ## Install
 ```shell
@@ -28,9 +28,10 @@ const { useTs } = require('@webpackon/use-ts');
 useTs()(config: WebpackConfig)
 ```
 
-## Example
+## Examples
 Full examples are [here](https://github.com/AndTem/webpackon/tree/master/examples)
 
+### Example babel + ts
 ```js
 const path = require('path');
 
@@ -46,5 +47,22 @@ module.exports = (_, { mode }) =>
     target: 'web',
     entry: path.resolve(__dirname, 'src', 'index.tsx'),
   });
+```
 
+### Example swc + ts
+```js
+const path = require('path');
+
+const { compose } = require('@webpackon/core');
+const { useTs } = require('@webpackon/use-ts');
+const { useSwc } = require('@webpackon/use-swc');
+
+module.exports = (_, { mode }) =>
+  compose(
+    useSwc({ useTs: true }),
+    useTs(),
+  )({
+    target: 'web',
+    entry: path.resolve(__dirname, 'src', 'index.tsx'),
+  });
 ```
