@@ -48,7 +48,7 @@ type UseOptimizationParams = {
 
 - ```dropConsole``` - removes console for production (default - ```true```)
 
-- ```splitChunkCacheGroups``` - unions packages (includePackages) in chunk
+- ```splitChunkCacheGroups``` - packages (includePackages) that will be combined into one chunk (chunkName)
 
 ## Example
 Full examples are [here](https://github.com/AndTem/webpackon/tree/master/examples)
@@ -72,3 +72,6 @@ module.exports = (_, { mode }) =>
     entry: path.resolve(__dirname, 'src', 'index.tsx'),
   });
 ```
+
+Result:
+<img src='https://raw.githubusercontent.com/AndTem/webpackon/master/images/react-example-result.png'>
