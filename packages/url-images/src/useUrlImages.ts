@@ -11,7 +11,7 @@ import ImageMinimizerPlugin from 'image-minimizer-webpack-plugin';
 import {
   UrlImagesLoaderOptions,
   createUrlImagesLoader,
-} from '../urlImagesLoader';
+} from './urlImagesLoader';
 
 type UseUrlImagesParams = {
   mode: Mode;

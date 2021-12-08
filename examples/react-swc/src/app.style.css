@@ -1,5 +1,6 @@
 h1 {
   color: #FF6F00;
+  background-image: url('~public/images/react-logo.svg');
 }
 
 @font-face {
