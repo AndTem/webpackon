@@ -12,7 +12,7 @@ import { findLoaderIndex, modifyLoader } from './utils';
 
 export type UseReactRefreshParams = {
   mode: Mode;
-  transformRuntime?: 'automatic' | 'classic';
+  swcTransformRuntime?: 'automatic' | 'classic';
 };
 
 const generateError = createPackageErrorGenerator(
@@ -25,7 +25,7 @@ const SWC_LOADER_NAME = 'swc-loader';
 export const useReactRefresh = createConfigDecorator<
   UseReactRefreshParams,
   true
->((config, { mode, transformRuntime = 'automatic' }) => {
+>((config, { mode, swcTransformRuntime = 'automatic' }) => {
   if (!isDevelopment(mode)) return config;
 
   const babelLoaderIndex = findLoaderIndex({
@@ -88,7 +88,7 @@ export const useReactRefresh = createConfigDecorator<
                 ...useItem.options?.jsc?.transform,
                 react: {
                   ...useItem.options?.jsc?.transform?.react,
-                  runtime: transformRuntime,
+                  runtime: swcTransformRuntime,
                   development: true,
                   refresh: true,
                 },
