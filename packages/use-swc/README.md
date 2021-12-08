@@ -46,7 +46,7 @@ useSwc({
 })
 ```
 
-- useTs - enables ts support
+- useTs - enables ts support for swc-loader
 
 - loaderParams.options - [swc-loader options](https://www.npmjs.com/package/swc-loader)
 
@@ -69,4 +69,23 @@ module.exports = (_, { mode }) =>
     target: 'web',
     entry: path.resolve(__dirname, 'src', 'index.tsx'),
   });
+```
+
+```.swcrc```
+```json
+{
+  "env": {
+    "mode": "usage",
+    "coreJs": 3
+  },
+  "jsc": {
+    "parser": {
+      "syntax": "typescript",
+      "tsx": true
+    },
+    "transform": {
+      "react": { "runtime": "automatic" }
+    }
+  }
+}
 ```

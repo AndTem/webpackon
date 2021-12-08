@@ -18,7 +18,7 @@ module.exports = (_, { mode }) =>
       mode,
       templatePath: path.resolve(__dirname, 'public', 'index.html'),
     }),
-    useSwc({ useTs: true,  }),
+    useSwc({ useTs: true }),
     useTs(),
     useCss({ mode }),
     useFonts(),
