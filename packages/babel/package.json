@@ -1,6 +1,6 @@
 {
   "name": "@webpackon/use-babel",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Webpackon use babel",
   "homepage": "https://github.com/AndTem/webpackon/tree/master/packages/babel#Readme",
   "keywords": ["use babel", "webpackon babel"],
@@ -22,6 +22,6 @@
   },
   "dependencies": {
     "babel-loader": "^8.2.2",
-    "@webpackon/core": "^0.1.0"
+    "@webpackon/core": "^1.0.0"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@webpackon/core",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Webpackon core",
   "homepage": "https://github.com/AndTem/webpackon/tree/master/packages/core#Readme",
   "browser": "src/index.ts",

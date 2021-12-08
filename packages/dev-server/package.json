@@ -1,6 +1,6 @@
 {
   "name": "@webpackon/use-dev-server",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Webpackon use dev-server",
   "homepage": "https://github.com/AndTem/webpackon/tree/master/packages/dev-server#Readme",
   "keywords": ["use dev server", "webpackon dev-server"],
@@ -21,7 +21,7 @@
     "release": "yarn run linting && yarn run build && npm publish"
   },
   "dependencies": {
-    "@webpackon/core": "^0.1.0"
+    "@webpackon/core": "^1.0.0"
   },
   "peerDependencies": {
     "webpack": "5.x.x",

@@ -1,6 +1,6 @@
 {
   "name": "@webpackon/use-html",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Webpackon use html",
   "homepage": "https://github.com/AndTem/webpackon/tree/master/packages/html#Readme",
   "keywords": ["use html", "webpackon html"],
@@ -22,6 +22,6 @@
   },
   "dependencies": {
     "html-webpack-plugin": "5.3.2",
-    "@webpackon/core": "^0.1.0"
+    "@webpackon/core": "^1.0.0"
   }
 }

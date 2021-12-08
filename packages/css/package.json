@@ -1,6 +1,6 @@
 {
   "name": "@webpackon/use-css",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Webpackon use css",
   "homepage": "https://github.com/AndTem/webpackon/tree/master/packages/css#Readme",
   "keywords": ["use css", "webpackon css"],
@@ -28,7 +28,7 @@
     "autoprefixer": "^10.3.1",
     "mini-css-extract-plugin": "^2.4.4",
     "css-minimizer-webpack-plugin": "^3.2.0",
-    "@webpackon/core": "^0.1.0"
+    "@webpackon/core": "^1.0.0"
   },
   "devDependencies": {
     "@types/mini-css-extract-plugin": "2.4.0",

@@ -1,6 +1,6 @@
 {
   "name": "@webpackon/use-ts-loader",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Webpackon use ts loader",
   "homepage": "https://github.com/AndTem/webpackon/tree/master/packages/use-ts-loader#Readme",
   "keywords": ["use ts-loader", "webpackon ts-loader"],
@@ -22,8 +22,8 @@
   },
   "dependencies": {
     "ts-loader": "^9.2.5",
-    "@webpackon/core": "^0.1.0",
-    "@webpackon/use-ts": "^0.1.0"
+    "@webpackon/core": "^1.0.0",
+    "@webpackon/use-ts": "^1.0.0"
   },
   "peerDependencies": {
     "webpack": "5.x.x"

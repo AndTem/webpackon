@@ -1,6 +1,6 @@
 {
   "name": "@webpackon/use-fonts",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Webpackon use fonts",
   "homepage": "https://github.com/AndTem/webpackon/tree/master/packages/fonts#Readme",
   "keywords": ["use fonts", "webpackon fonts"],
@@ -21,6 +21,6 @@
     "release": "yarn run linting && yarn run build && npm publish"
   },
   "dependencies": {
-    "@webpackon/core": "^0.1.0"
+    "@webpackon/core": "^1.0.0"
   }
 }
