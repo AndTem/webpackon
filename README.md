@@ -7,12 +7,15 @@
 </p>
 
 ## JS
-- [@webpackon/use-optimization]()
 - [@webpackon/use-babel]()
 - [@webpackon/use-swc]()
 
 ## TypeScript
 - [@webpackon/use-ts]()
+
+## Optimization
+- [@webpackon/use-optimization]()
+- [@webpackon/use-dev-server]()
 
 ## CSS
 - [@webpackon/use-css]()
@@ -28,9 +31,6 @@
 
 ## React
 - [@webpackon/use-react-refresh]()
-
-## Dev
-- [@webpackon/use-dev-server]()
 
 ## Utils
 - [@webpackon/core]()
