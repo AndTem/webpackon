@@ -9,7 +9,7 @@
 
 Features:
 - adds support imports images as url from scripts and css files
-- transforming jpeg in progressive jpeg (default)
+- transforming jpeg to progressive jpeg (default)
 - minification svg (default)
 
 Supported extensions:
@@ -78,4 +78,11 @@ import myImageSrc from 'public/images/myImage.svg';
 ...
 <img src={myImageSrc} alt="my image" />
 ...
+```
+
+```example.css```
+```css
+article {
+  background-image: url('~public/images/bg-image.jpg');
+}
 ```
