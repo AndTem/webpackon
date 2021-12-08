@@ -1,6 +1,6 @@
 {
   "name": "@webpackon/use-swc",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Webpackon use swc",
   "homepage": "https://github.com/AndTem/webpackon/tree/master/packages/use-swc#Readme",
   "keywords": ["use swc", "webpackon swc"],
