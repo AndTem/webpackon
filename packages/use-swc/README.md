@@ -8,7 +8,7 @@
 # @webpackon/use-swc
 
 Features:
-- adds babel support
+- adds swc support
 - simple transpiling of modules
 
 ## Install
