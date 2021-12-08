@@ -20,7 +20,7 @@ yarn add @webpackon/core
 ## Utils
 
 ### compose
-Used for composition webpackon decorators.
+Used for composition webpackon decorators. Decorators applied from right to left or upwards.
 
 #### Example
 
