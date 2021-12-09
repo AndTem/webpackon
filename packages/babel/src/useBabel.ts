@@ -3,7 +3,7 @@ import {
   addLoaders,
   addResolveExtensions,
   compose,
-} from '@webpackon/core/lib';
+} from '@webpackon/core';
 
 import { createBabelLoader, BabelLoaderOptions } from './babelLoader';
 
