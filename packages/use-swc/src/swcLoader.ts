@@ -2,7 +2,7 @@ import {
   createLoader,
   LoaderCreatorParams,
   getExcludePackagesRegexp,
-} from '@webpackon/core/lib';
+} from '@webpackon/core';
 
 type SwcLoaderAddParams = {
   transpileModules?: string[];
