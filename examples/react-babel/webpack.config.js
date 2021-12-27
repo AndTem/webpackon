@@ -10,9 +10,11 @@ const { useFonts } = require('@webpackon/use-fonts');
 const { useUrlImages } = require('@webpackon/use-url-images');
 const { useDevServer } = require('@webpackon/use-dev-server');
 const { useOptimization } = require('@webpackon/use-optimization');
+const { useTranspileModules } = require('@webpackon/use-transpile-modules');
 
 module.exports = (_, { mode }) =>
   compose(
+    useTranspileModules({ transpileModules: ['@webpackon/example-package'] }),
     useReactRefresh({ mode }),
     useHtml({
       mode,

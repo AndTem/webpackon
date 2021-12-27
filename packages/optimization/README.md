@@ -14,6 +14,7 @@ Features:
 - adds hash for result files
 - adds hash for assets, places their in the ```static``` directory
 - cleaning dist directory before build
+- generates hidden source map files
 
 ## Install
 ```shell
