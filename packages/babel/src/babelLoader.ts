@@ -1,11 +1,6 @@
-import {
-  createLoader,
-  LoaderCreatorParams,
-  getExcludePackagesRegexp,
-} from '@webpackon/core';
+import { createLoader, LoaderCreatorParams } from '@webpackon/core';
 
 type BabelLoaderAddParams = {
-  transpileModules?: string[];
   options?: Record<string, any>;
   useTs?: boolean;
 };
@@ -13,11 +8,8 @@ type BabelLoaderAddParams = {
 export type BabelLoaderOptions = LoaderCreatorParams<BabelLoaderAddParams>;
 
 export const createBabelLoader = createLoader<BabelLoaderAddParams>(
-  ({ options, transpileModules, useTs }) => ({
+  ({ options, useTs }) => ({
     test: useTs ? /\.(ts|tsx)$/ : /\.(js|jsx)$/,
-    exclude: transpileModules
-      ? getExcludePackagesRegexp(transpileModules)
-      : /node_modules/,
     use: [
       {
         loader: 'babel-loader',

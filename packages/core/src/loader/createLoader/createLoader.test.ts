@@ -7,6 +7,7 @@ describe('createLoader', () => {
     const testLoader = createLoader(() => ({ test: /test/, use: [] }));
     const expectLoader = {
       test: /test/,
+      exclude: /node_modules/,
       use: [],
     };
 
@@ -47,6 +48,7 @@ describe('createLoader', () => {
     const expectLoader = {
       test: testRegExp,
       use: [],
+      exclude: /node_modules/,
       params: transmittedParams,
     };
 

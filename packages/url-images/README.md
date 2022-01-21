@@ -45,12 +45,20 @@ type UseUrlImagesParams = {
     generator?: Record<string, any>;
   };
   imageminPlugins?: Array<[string, Record<string, unknown>]>;
+  transpileModules?: string[];
 };
 ```
 
 - ```mode``` - webpack mode
 - ```loaderParams.generator``` - [webpack option](https://webpack.js.org/guides/asset-modules/#custom-data-uri-generator)
 - ```imageminPlugins``` - [image-minimizer-webpack-plugin](https://www.npmjs.com/package/image-minimizer-webpack-plugin) ```plugin``` option
+- ```transpileModules```
+```ts
+useUrlImages({
+  mode: 'production',
+  transpileModules: ['my-package']
+})
+```
 
 ## Example
 Full examples are [here](https://github.com/AndTem/webpackon/tree/master/examples)

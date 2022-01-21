@@ -36,6 +36,7 @@ useFonts(params?: UseFontsParams)(config: WebpackConfig)
 ### UseFontsParams
 ```ts
 export type UseFontsParams = {
+  transpileModules?: string[];
   loaderParams?: {
     generator?: Record<string, any>;
   }
@@ -43,6 +44,13 @@ export type UseFontsParams = {
 ```
 
 - loaderParams.generator - [webpack option](https://webpack.js.org/guides/asset-modules/#custom-data-uri-generator)
+
+- transpileModules
+```ts
+useFonts({
+  transpileModules: ['my-package']
+})
+```
 
 ## Example
 Full examples are [here](https://github.com/AndTem/webpackon/tree/master/examples)

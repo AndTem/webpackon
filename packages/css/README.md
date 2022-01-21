@@ -34,6 +34,7 @@ useCss(params: UseCssParams)(config: WebpackConfig)
 ```ts
 export type UseCssParams = {
   mode: 'development' | 'production';
+  transpileModules?: string[];
   enableCssModules?: boolean;
   cssLoaderParams?: {
     options?: Record<string, any>;
@@ -54,6 +55,14 @@ export type UseCssParams = {
 - postCssPlugins - [postcss plugins option](https://www.npmjs.com/package/postcss-loader#postcssOptions)
 
 - postCssLoaderOptions.options - [postcss-loader option](https://www.npmjs.com/package/postcss-loader#Options)
+
+- transpileModules
+```ts
+useCss({
+  mode: 'production',
+  transpileModules: ['my-package']
+})
+```
 
 ## Example
 Full examples are [here](https://github.com/AndTem/webpackon/tree/master/examples)

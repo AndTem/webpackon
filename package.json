@@ -5,7 +5,8 @@
   "description": "Webpackon",
   "workspaces": [
     "packages/*",
-    "examples/*"
+    "examples/*",
+    "example-package"
   ],
   "scripts": {
     "lint:fix": "yarn workspaces run lint:fix",

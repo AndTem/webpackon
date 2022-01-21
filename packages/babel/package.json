@@ -23,6 +23,6 @@
   },
   "dependencies": {
     "babel-loader": "^8.2.2",
-    "@webpackon/core": "^1.0.0"
+    "@webpackon/core": "^1.1.0"
   }
 }
