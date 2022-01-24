@@ -21,6 +21,18 @@ describe('addExcludeToAllLoaders', () => {
       { initialExclude: ['package1'], exclude: /package2/ },
       ['package1', /package2/],
     ],
+    [
+      { initialExclude: [/node_modules/], exclude: /node_modules\/package/ },
+      [/node_modules\/package/],
+    ],
+    [
+      { initialExclude: ['node_modules'], exclude: /node_modules\/package/ },
+      [/node_modules\/package/],
+    ],
+    [
+      { initialExclude: 'node_modules', exclude: /node_modules\/package/ },
+      /node_modules\/package/,
+    ],
   ])('Input: %j, output: %j', ({ initialExclude, exclude }, resultExclude) => {
     expect(
       addExcludeToAllLoaders(

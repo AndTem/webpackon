@@ -1,5 +1,8 @@
 import { Config } from '@webpackon/core';
 
+const isNodeModulesExclude = (exclude: string | RegExp): boolean =>
+  String(exclude).replaceAll('/', '') === 'node_modules';
+
 export const addExcludeToAllLoaders = (
   config: Config,
   exclude: RegExp
@@ -11,10 +14,18 @@ export const addExcludeToAllLoaders = (
       if (typeof rule === 'string') return rule;
 
       if (Array.isArray(rule.exclude)) {
-        return { ...rule, exclude: [...(rule.exclude || []), exclude] };
+        const currentExclude = (
+          [...(rule.exclude || []), exclude] as Array<string | RegExp>
+        ).filter((regexp) => !isNodeModulesExclude(regexp));
+
+        return { ...rule, exclude: currentExclude };
       }
 
       if (!rule.exclude) return { ...rule, exclude };
+
+      if (isNodeModulesExclude(rule.exclude as string | RegExp)) {
+        return { ...rule, exclude };
+      }
 
       return { ...rule, exclude: [rule.exclude, exclude] };
     }),
