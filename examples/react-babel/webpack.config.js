@@ -25,7 +25,7 @@ module.exports = (_, { mode }) =>
     useCss({ mode }),
     useFonts(),
     useUrlImages({ mode }),
-    useDevServer({ mode }),
+    useDevServer({ mode, port: 3000 }),
     useOptimization({
       mode,
       splitChunkCacheGroups: [

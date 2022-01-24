@@ -34,6 +34,7 @@ useDevServer(params: UseDevServerParams)(config: WebpackConfig)
 ```ts
 export type UseDevServerParams = {
   mode: 'development' | 'production';
+  port?: number;
   open?: boolean;
   hot?: boolean;
   useLocalIp?: boolean;
@@ -42,6 +43,8 @@ export type UseDevServerParams = {
 ```
 
 - mode - webpack mode
+
+- port - [webpack option](https://webpack.js.org/configuration/dev-server/#devserverport)
 
 - open - [webpack option](https://webpack.js.org/configuration/dev-server/#devserveropen)
 
