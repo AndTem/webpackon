@@ -1,6 +1,11 @@
 export { createLoader, addLoaders, LoaderCreatorParams } from './loader';
 export { addPlugins, Plugin } from './plugin';
-export { createConfigDecorator, Config, addResolveExtensions } from './config';
+export {
+  createConfigDecorator,
+  Config,
+  addResolveExtensions,
+  addTranspileModulesToRule,
+} from './config';
 export { Mode, isProduction, isDevelopment } from './mode';
 export {
   compose,

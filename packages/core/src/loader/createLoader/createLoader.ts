@@ -1,5 +1,5 @@
 import { Loader } from '../types';
-import { getExcludePackagesRegexp } from '../../common/utils';
+import { addTranspileModulesToRule } from '../../config';
 
 export type LoaderCreatorParams<AdditionalParams = {}> = Partial<
   Pick<Loader, 'test' | 'exclude'>
@@ -13,12 +13,14 @@ export function createLoader<AdditionalParams>(
     const { test, exclude, transpileModules } = params;
     const loader = loaderCreator(params);
 
-    return {
+    const result = {
       ...loader,
       test: test || loader.test,
-      exclude: transpileModules
-        ? getExcludePackagesRegexp(transpileModules)
-        : exclude || loader.exclude || /node_modules/,
+      exclude: exclude || loader.exclude || /node_modules/,
     };
+
+    return transpileModules?.length
+      ? (addTranspileModulesToRule(result, transpileModules) as Loader)
+      : result;
   };
 }

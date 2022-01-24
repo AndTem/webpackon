@@ -1,6 +1,6 @@
 import { compose as ramdaCompose } from 'ramda';
 
-import { Config } from '../../config';
+import { Config } from '../../config/types';
 
 type ComposeConfig = (config: Config) => Config;
 

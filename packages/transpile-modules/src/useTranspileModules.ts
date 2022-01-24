@@ -1,10 +1,8 @@
 import {
   createConfigDecorator,
   createPackageErrorGenerator,
-  getExcludePackagesRegexp,
+  addTranspileModulesToRule,
 } from '@webpackon/core';
-
-import { addExcludeToAllLoaders } from './utils';
 
 const generateError = createPackageErrorGenerator(
   '@webpackon/use-transpile-modules'
@@ -19,8 +17,13 @@ export const useTranspileModules = createConfigDecorator<
   if (!transpileModules)
     throw generateError('transpileModules param not found');
 
-  return addExcludeToAllLoaders(
-    config,
-    getExcludePackagesRegexp(transpileModules)
-  );
+  return {
+    ...config,
+    module: {
+      ...config.module,
+      rules: config.module?.rules?.map((rule) =>
+        addTranspileModulesToRule(rule, transpileModules)
+      ),
+    },
+  };
 });

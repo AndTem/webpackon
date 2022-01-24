@@ -1,6 +1,6 @@
 {
   "name": "@webpackon/use-transpile-modules",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Webpackon use transpile modules",
   "homepage": "https://github.com/AndTem/webpackon/tree/master/transpile-modules/babel#Readme",
   "keywords": ["use transpile modules", "webpackon transpile modules", "monorepo"],
