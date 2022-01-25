@@ -31,7 +31,7 @@ export const useOptimization = createConfigDecorator<
 
     output: {
       filename: '[name].[fullhash].bundle.js',
-      assetModuleFilename: 'static/[hash][ext][query]',
+      assetModuleFilename: 'static/[name].[hash][ext][query]',
       clean: true,
       ...config?.output,
     },
