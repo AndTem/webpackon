@@ -19,6 +19,7 @@ import { createPostCssLoader, PostCssLoaderOptions } from '../postCssLoader';
 type UseCssParams = {
   mode: Mode;
   enableCssModules?: boolean;
+  transpileModules?: string[];
   cssLoaderParams?: Partial<CssLoaderOptions>;
   postCssPlugins?: PostCssLoaderOptions['plugins'];
   postCssLoaderOptions?: Partial<PostCssLoaderOptions>;
@@ -37,6 +38,7 @@ export const useCss = createConfigDecorator<UseCssParams, true>(
     config,
     {
       cssLoaderParams,
+      transpileModules,
       mode,
       postCssPlugins,
       postCssLoaderOptions,
@@ -45,7 +47,12 @@ export const useCss = createConfigDecorator<UseCssParams, true>(
   ) => {
     const modifyConfig = compose(
       addLoaders([
-        createCssLoader({ mode, enableCssModules, ...cssLoaderParams }),
+        createCssLoader({
+          mode,
+          enableCssModules,
+          transpileModules,
+          ...cssLoaderParams,
+        }),
         createPostCssLoader({
           mode,
           plugins: postCssPlugins,
