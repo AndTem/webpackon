@@ -29,7 +29,7 @@ const getMiniCssExtractPlugin = (mode: Mode): Plugin =>
   new MiniCssExtractPlugin({
     filename: path.join(
       'styles',
-      isProduction(mode) ? '[fullhash].css' : '[name].css'
+      isProduction(mode) ? '[name].[fullhash].css' : '[name].css'
     ),
   });
 
