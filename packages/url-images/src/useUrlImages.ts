@@ -16,6 +16,7 @@ import {
 type UseUrlImagesParams = {
   mode: Mode;
   loaderParams?: UrlImagesLoaderOptions;
+  transpileModules?: string[];
   imageminPlugins?: Array<[string, Record<string, unknown>]>;
 };
 
@@ -25,7 +26,7 @@ const DEFAULT_IMAGEMIN_PLUGINS: UseUrlImagesParams['imageminPlugins'] = [
 ];
 
 export const useUrlImages = createConfigDecorator<UseUrlImagesParams, true>(
-  (config, { loaderParams = {}, imageminPlugins, mode }) => {
+  (config, { loaderParams = {}, transpileModules, imageminPlugins, mode }) => {
     const prodPlugins = [
       new ImageMinimizerPlugin({
         minimizerOptions: {
@@ -36,7 +37,7 @@ export const useUrlImages = createConfigDecorator<UseUrlImagesParams, true>(
 
     const modifyConfig = compose(
       addPlugins(isProduction(mode) ? prodPlugins : []),
-      addLoaders([createUrlImagesLoader(loaderParams)])
+      addLoaders([createUrlImagesLoader({ transpileModules, ...loaderParams })])
     );
 
     return modifyConfig(config);
