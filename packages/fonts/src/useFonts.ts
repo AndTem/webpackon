@@ -4,9 +4,12 @@ import { FontsLoaderOptions, createFontsLoader } from './fontsLoader';
 
 type UseFontsParams = {
   loaderParams?: FontsLoaderOptions;
+  transpileModules?: string[];
 };
 
 export const useFonts = createConfigDecorator<UseFontsParams, false>(
-  (config, { loaderParams } = {}) =>
-    addLoaders([createFontsLoader(loaderParams || {})])(config)
+  (config, { loaderParams, transpileModules } = {}) =>
+    addLoaders([createFontsLoader({ transpileModules, ...loaderParams })])(
+      config
+    )
 );
