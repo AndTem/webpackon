@@ -12,32 +12,35 @@ describe('addTranspileModulesToRule', () => {
       webpack.RuleSetRule['exclude']
     ]
   >([
-    [{ transpileModules: ['package'] }, /node_modules[\\/](?!(package)).*/],
+    [
+      { transpileModules: ['package'] },
+      /node_modules[\\/](?!(package$|package\/))/,
+    ],
     [
       { initialExclude: 'package1', transpileModules: ['package2'] },
-      ['package1', /node_modules[\\/](?!(package2)).*/],
+      ['package1', /node_modules[\\/](?!(package2$|package2\/))/],
     ],
     [
       { initialExclude: ['package1'], transpileModules: ['package2'] },
-      ['package1', /node_modules[\\/](?!(package2)).*/],
+      ['package1', /node_modules[\\/](?!(package2$|package2\/))/],
     ],
     [
       {
         initialExclude: [/node_modules/],
         transpileModules: ['package'],
       },
-      [/node_modules[\\/](?!(package)).*/],
+      [/node_modules[\\/](?!(package$|package\/))/],
     ],
     [
       {
         initialExclude: ['node_modules'],
         transpileModules: ['package'],
       },
-      [/node_modules[\\/](?!(package)).*/],
+      [/node_modules[\\/](?!(package$|package\/))/],
     ],
     [
       { initialExclude: 'node_modules', transpileModules: ['package'] },
-      /node_modules[\\/](?!(package)).*/,
+      /node_modules[\\/](?!(package$|package\/))/,
     ],
   ])(
     'Input: %j, output: %j',
