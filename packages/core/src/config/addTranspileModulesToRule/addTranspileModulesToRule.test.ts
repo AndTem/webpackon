@@ -3,51 +3,11 @@ import webpack from 'webpack';
 import { addTranspileModulesToRule } from './addTranspileModulesToRule';
 
 describe('addTranspileModulesToRule', () => {
-  it.each<
-    [
-      {
-        initialExclude?: webpack.RuleSetRule['exclude'];
-        transpileModules: string[];
-      },
-      webpack.RuleSetRule['exclude']
-    ]
-  >([
-    [
-      { transpileModules: ['package'] },
-      /node_modules[\\/](?!(package$|package\/))/,
-    ],
-    [
-      { initialExclude: 'package1', transpileModules: ['package2'] },
-      ['package1', /node_modules[\\/](?!(package2$|package2\/))/],
-    ],
-    [
-      { initialExclude: ['package1'], transpileModules: ['package2'] },
-      ['package1', /node_modules[\\/](?!(package2$|package2\/))/],
-    ],
-    [
-      {
-        initialExclude: [/node_modules/],
-        transpileModules: ['package'],
-      },
-      [/node_modules[\\/](?!(package$|package\/))/],
-    ],
-    [
-      {
-        initialExclude: ['node_modules'],
-        transpileModules: ['package'],
-      },
-      [/node_modules[\\/](?!(package$|package\/))/],
-    ],
-    [
-      { initialExclude: 'node_modules', transpileModules: ['package'] },
-      /node_modules[\\/](?!(package$|package\/))/,
-    ],
-  ])(
-    'Input: %j, output: %j',
-    ({ initialExclude, transpileModules }, resultExclude) => {
-      expect(
-        addTranspileModulesToRule({ exclude: initialExclude }, transpileModules)
-      ).toEqual({ exclude: resultExclude });
-    }
-  );
+  it('Remove node_modules', () => {
+    const result = addTranspileModulesToRule({ exclude: [/node_modules/] }, [
+      'package1',
+    ]) as webpack.RuleSetRule;
+
+    expect((result?.exclude as any).length).toBe(1);
+  });
 });

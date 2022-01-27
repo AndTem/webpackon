@@ -1,3 +1,5 @@
+import path from 'path';
+
 import { compose as ramdaCompose } from 'ramda';
 
 import { Config } from '../../config/types';
@@ -9,7 +11,7 @@ export const compose = (...funcs: ComposeConfig[]): ComposeConfig =>
 
 const generateOrPackagesRegexpPart = (transpileModules: string[]): string =>
   transpileModules
-    .flatMap((moduleName) => [`${moduleName}$`, `${moduleName}/`])
+    .flatMap((moduleName) => [`${moduleName}$`, `${moduleName}\\${path.sep}`])
     .join('|');
 
 export const getExcludePackagesRegexp = (
@@ -17,7 +19,7 @@ export const getExcludePackagesRegexp = (
 ): RegExp => {
   const modulesOrRule = generateOrPackagesRegexpPart(transpileModules);
 
-  const regExpString = `node_modules[\\\\/](?!(${modulesOrRule}))`;
+  const regExpString = `node_modules[\\${path.sep}](?!(${modulesOrRule}))`;
 
   return new RegExp(regExpString);
 };
@@ -27,7 +29,7 @@ export const getIncludePackagesRegexp = (
 ): RegExp => {
   const modulesOrRule = generateOrPackagesRegexpPart(transpileModules);
 
-  const regExpString = `node_modules[\\\\/](${modulesOrRule})`;
+  const regExpString = `node_modules[${path.sep}](${modulesOrRule})`;
 
   return new RegExp(regExpString);
 };

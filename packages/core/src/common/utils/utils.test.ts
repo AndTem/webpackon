@@ -1,10 +1,12 @@
+import path from 'path';
+
 import { getExcludePackagesRegexp, getIncludePackagesRegexp } from './utils';
 
 describe('getExcludePackagesRegexp', () => {
   it.each<[{ packages: string[]; input: string }, boolean]>([
-    [{ packages: ['react'], input: 'node_modules/react' }, false],
-    [{ packages: ['react'], input: 'node_modules/react/dom' }, false],
-    [{ packages: ['react'], input: 'node_modules/react-dom' }, true],
+    [{ packages: ['react'], input: `node_modules${path.sep}react` }, false],
+    [{ packages: ['react'], input: `node_modules${path.sep}react/dom` }, false],
+    [{ packages: ['react'], input: `node_modules${path.sep}react-dom` }, true],
   ])(
     'Input: %s returned regexp test is %s',
     ({ packages, input }, testRegexpResult) => {
@@ -17,9 +19,15 @@ describe('getExcludePackagesRegexp', () => {
 
 describe('getIncludePackagesRegexp', () => {
   it.each<[{ packages: string[]; input: string }, boolean]>([
-    [{ packages: ['react'], input: 'node_modules/react' }, true],
-    [{ packages: ['react'], input: 'node_modules/react/dom' }, true],
-    [{ packages: ['react'], input: 'node_modules/react-dom' }, false],
+    [{ packages: ['react'], input: `node_modules${path.sep}react` }, true],
+    [
+      {
+        packages: ['react'],
+        input: `node_modules${path.sep}react${path.sep}dom`,
+      },
+      true,
+    ],
+    [{ packages: ['react'], input: `node_modules${path.sep}react-dom` }, false],
   ])(
     'Input: %s returned regexp test is %s',
     ({ packages, input }, testRegexpResult) => {

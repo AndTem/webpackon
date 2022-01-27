@@ -1,9 +1,11 @@
+import path from 'path';
+
 import webpack from 'webpack';
 
 import { getExcludePackagesRegexp } from '../../common/utils';
 
 const isNodeModulesExclude = (exclude: string | RegExp): boolean =>
-  String(exclude).replaceAll('/', '') === 'node_modules';
+  String(exclude).replace(new RegExp(path.sep, 'g'), '') === 'node_modules';
 
 type ModuleRule = webpack.RuleSetRule | '...';
 
