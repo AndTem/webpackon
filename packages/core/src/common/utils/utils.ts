@@ -9,8 +9,12 @@ type ComposeConfig = (config: Config) => Config;
 export const compose = (...funcs: ComposeConfig[]): ComposeConfig =>
   (ramdaCompose as any)(...funcs);
 
+const replaceOSSlash = (string: string): string =>
+  string.replace(/\//, `\\${path.sep}`);
+
 const generateOrPackagesRegexpPart = (transpileModules: string[]): string =>
   transpileModules
+    .map(replaceOSSlash)
     .flatMap((moduleName) => [`${moduleName}$`, `${moduleName}\\${path.sep}`])
     .join('|');
 
@@ -21,6 +25,7 @@ export const getExcludePackagesRegexp = (
 
   const regExpString = `node_modules[\\${path.sep}](?!(${modulesOrRule}))`;
 
+  console.log('new RegExp(regExpString)', new RegExp(regExpString));
   return new RegExp(regExpString);
 };
 

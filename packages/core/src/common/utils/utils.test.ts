@@ -7,6 +7,13 @@ describe('getExcludePackagesRegexp', () => {
     [{ packages: ['react'], input: `node_modules${path.sep}react` }, false],
     [{ packages: ['react'], input: `node_modules${path.sep}react/dom` }, false],
     [{ packages: ['react'], input: `node_modules${path.sep}react-dom` }, true],
+    [
+      {
+        packages: ['lib/utils'],
+        input: `node_modules${path.sep}lib${path.sep}utils`,
+      },
+      false,
+    ],
   ])(
     'Input: %s returned regexp test is %s',
     ({ packages, input }, testRegexpResult) => {
@@ -28,6 +35,13 @@ describe('getIncludePackagesRegexp', () => {
       true,
     ],
     [{ packages: ['react'], input: `node_modules${path.sep}react-dom` }, false],
+    [
+      {
+        packages: ['lib/utils'],
+        input: `node_modules${path.sep}lib${path.sep}utils`,
+      },
+      true,
+    ],
   ])(
     'Input: %s returned regexp test is %s',
     ({ packages, input }, testRegexpResult) => {
