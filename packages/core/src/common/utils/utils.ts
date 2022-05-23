@@ -25,7 +25,6 @@ export const getExcludePackagesRegexp = (
 
   const regExpString = `node_modules[\\${path.sep}](?!(${modulesOrRule}))`;
 
-  console.log('new RegExp(regExpString)', new RegExp(regExpString));
   return new RegExp(regExpString);
 };
 
