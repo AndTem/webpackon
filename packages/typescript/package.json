@@ -1,6 +1,6 @@
 {
   "name": "@webpackon/use-ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Webpackon use typescript",
   "homepage": "https://github.com/AndTem/webpackon/tree/master/packages/typescript#Readme",
   "keywords": ["use ts", "use typescript", "webpackon ts"],
