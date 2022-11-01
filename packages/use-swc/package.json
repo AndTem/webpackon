@@ -23,6 +23,6 @@
   },
   "dependencies": {
     "swc-loader": "^0.1.15",
-    "@webpackon/core": "^1.0.0"
+    "@webpackon/core": "^1.1.6"
   }
 }

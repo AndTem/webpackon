@@ -22,7 +22,7 @@
     "release": "npm publish ./lib"
   },
   "dependencies": {
-    "@webpackon/core": "^1.0.0",
+    "@webpackon/core": "^1.1.6",
     "terser-webpack-plugin": "^5.1.4",
     "case-sensitive-paths-webpack-plugin": "^2.4.0"
   },

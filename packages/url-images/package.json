@@ -25,6 +25,6 @@
     "image-minimizer-webpack-plugin": "2.2.0",
     "imagemin-jpegtran": "7.0.0",
     "imagemin-svgo": "9.0.0",
-    "@webpackon/core": "^1.0.0"
+    "@webpackon/core": "^1.1.6"
   }
 }
