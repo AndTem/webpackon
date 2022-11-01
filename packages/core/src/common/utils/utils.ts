@@ -33,7 +33,7 @@ export const getIncludePackagesRegexp = (
 ): RegExp => {
   const modulesOrRule = generateOrPackagesRegexpPart(transpileModules);
 
-  const regExpString = `node_modules[${path.sep}](${modulesOrRule})`;
+  const regExpString = `node_modules[\\${path.sep}](${modulesOrRule})`;
 
   return new RegExp(regExpString);
 };
